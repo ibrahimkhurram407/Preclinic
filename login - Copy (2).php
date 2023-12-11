@@ -1,8 +1,11 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 
-<!-- forgot-password24:03-->
+<!-- login23:11-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -21,20 +24,27 @@
     <div class="main-wrapper account-wrapper">
         <div class="account-page">
 			<div class="account-center">
-                <div class="account-box">
-                    <form class="form-signin" action="#">
+				<div class="account-box">
+                    <form action="http://dreamguys.co.in/preclinic/template/index.php" class="form-signin">
 						<div class="account-logo">
                             <a href="index.php"><img src="assets/img/logo-dark.png" alt=""></a>
                         </div>
                         <div class="form-group">
-                            <label>Enter Your Email</label>
-                            <input type="text" class="form-control" autofocus>
+                            <label>Username</label>
+                            <input type="text" autofocus="" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="form-group text-right">
+                            <a href="forgot-password.php">Forgot your password?</a>
                         </div>
                         <div class="form-group text-center">
-                            <button class="btn btn-primary account-btn" type="submit">Reset Password</button>
+                            <button type="submit" class="btn btn-primary account-btn">Login</button>
                         </div>
                         <div class="text-center register-link">
-                            <a href="login.php">Back to Login</a>
+                            Don’t have an account? <a href="register.php">Register Now</a>
                         </div>
                     </form>
                 </div>
@@ -48,5 +58,5 @@
 </body>
 
 
-<!-- forgot-password24:03-->
+<!-- login23:12-->
 </html>

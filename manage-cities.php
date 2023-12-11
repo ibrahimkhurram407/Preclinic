@@ -4,7 +4,6 @@
 ?>
 <?php 
 include('./include/config.php');
-
 include('newfunc.php');
 #$_SESSION['username'] = "admin"; #Hard coded remove when done
 if (!isset($_SESSION['username'])) {
@@ -101,13 +100,15 @@ if(isset($_POST['docsub1']))
   }
 }
 
+
 ?>
+
 
 <div class="page-wrapper">
     <div class="content">
         <div class="row">
             <div class="col-sm-4 col-3">
-                <h4 class="page-title">Patients</h4>
+                <h4 class="page-title">Manage Cities</h4>
             </div>
         </div>
         <div class="row">
@@ -130,55 +131,36 @@ if(isset($_POST['docsub1']))
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Specialization</th>
-                                        <th>Email</th>
-                                        <th>City</th>
-                                        <th>Password</th>
-                                        <th>Doctor Fees</th>
-                                        <th class="text-right">Action</th>
+                                        <th scope="col">City</th>
+                                        <th scope="col">Manage</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php 
-                                    include('include/config.php');
-                                    global $con;
-                                    $query = "select * from doctb";
-                                    $result = mysqli_query($con,$query);
-                                    while ($row = mysqli_fetch_array($result)){
-                                    $id = $row['id'];
-                                    $username = $row['username'];
-                                    $spec = $row['spec'];
-                                    $email = $row['email'];
-                                    $city = $row['city'];
-                                    $password = $row['password'];
-                                    $docFees = $row['docFees'];
-                                    
-                                    echo "<tr>
-                                        <td>$id</td>
-                                        <td><img width='28 height='28' src='assets/img/user.jpg' class='rounded-circle m-r-5' alt=''>$username</td>
-                                        <td>$spec</td>
-                                        <td>$email</td>
-                                        <td>$city</td>
-                                        <td>$password</td>
-                                        <td>$docFees</td>
-                                        <td class='text-right'>
-                                            <div class='dropdown dropdown-action'>
-                                                <a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown'
-                                                    aria-expanded='false'><i class='fa fa-ellipsis-v'></i></a>
-                                                <div class='dropdown-menu dropdown-menu-right'>
-                                                    <a class='dropdown-item' href='edit-patient.php'><i
-                                                            class='fa fa-pencil m-r-5'></i> Edit</a>
-                                                    <a class='dropdown-item' href='#' data-toggle='modal'
-                                                        data-target='#delete_patient'><i class='fa fa-trash-o m-r-5'></i>
-                                                        Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>";
-                                    }
+                                <?php
+                                global $con;
 
+                                // Query to get all unique cities
+                                $query = "SELECT DISTINCT city FROM doctb";
+                                $result = mysqli_query($con, $query);
+
+                                if ($result) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $city = $row['city'];
+                                ?>
+                                        <tr>
+                                            <td><?php echo $city; ?></td>
+                                            <td>
+                                                <form method="post" action="">
+                                                    <input type="hidden" name="cityToDelete" value="<?php echo $city; ?>">
+                                                    <button type="submit" name="deleteCity" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                <?php
+                                    }
+                                } else {
+                                    echo "Error: " . mysqli_error($con);
+                                }
                                 ?>
                                 </tbody>
                             </table>
@@ -202,6 +184,8 @@ if(isset($_POST['docsub1']))
             </div>
         </div>
     </div>
+
+</div>
 </div>
 <div class="sidebar-overlay" data-reff=""></div>
 <script src="assets/js/jquery-3.2.1.min.js"></script>
@@ -209,16 +193,18 @@ if(isset($_POST['docsub1']))
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.slimscroll.js"></script>
 <script src="assets/js/select2.min.js"></script>
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.bootstrap4.min.js"></script>
 <script src="assets/js/moment.min.js"></script>
 <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="assets/js/app.js"></script>
-</body>
-
 <script>
-var Active = document.getElementById('doctors');
+var Active = document.getElementById('manage-cities');
 Active.classList.add('active');
 </script>
+</body>
 
-<!-- doctors23:17-->
+
+<!-- patients23:19-->
 
 </html>

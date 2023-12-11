@@ -4,7 +4,6 @@
 ?>
 <?php 
 include('./include/config.php');
-
 include('newfunc.php');
 #$_SESSION['username'] = "admin"; #Hard coded remove when done
 if (!isset($_SESSION['username'])) {
@@ -101,13 +100,15 @@ if(isset($_POST['docsub1']))
   }
 }
 
+
 ?>
+
 
 <div class="page-wrapper">
     <div class="content">
         <div class="row">
             <div class="col-sm-4 col-3">
-                <h4 class="page-title">Patients</h4>
+                <h4 class="page-title">Prescriptions</h4>
             </div>
         </div>
         <div class="row">
@@ -130,56 +131,50 @@ if(isset($_POST['docsub1']))
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Specialization</th>
-                                        <th>Email</th>
-                                        <th>City</th>
-                                        <th>Password</th>
-                                        <th>Doctor Fees</th>
-                                        <th class="text-right">Action</th>
+                                        <th scope="col">Doctor</th>
+                                        <th scope="col">Patient ID</th>
+                                        <th scope="col">Appointment ID</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Appointment Date</th>
+                                        <th scope="col">Disease</th>
+                                        <th scope="col">Allergy</th>
+                                        <th scope="col">Prescription</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php 
                                     include('include/config.php');
                                     global $con;
-                                    $query = "select * from doctb";
+                                    $query = "select * from prestb";
                                     $result = mysqli_query($con,$query);
                                     while ($row = mysqli_fetch_array($result)){
-                                    $id = $row['id'];
-                                    $username = $row['username'];
-                                    $spec = $row['spec'];
-                                    $email = $row['email'];
-                                    $city = $row['city'];
-                                    $password = $row['password'];
-                                    $docFees = $row['docFees'];
+                                    $doctor = $row['doctor'];
+                                    $pid = $row['pid'];
+                                    $ID = $row['ID'];
+                                    $fname = $row['fname'];
+                                    $lname = $row['lname'];
+                                    $appdate = $row['appdate'];
+                                    $disease = $row['disease'];
+                                    $allergy = $row['allergy'];
+                                    $pres = $row['prescription'];
+
                                     
                                     echo "<tr>
-                                        <td>$id</td>
-                                        <td><img width='28 height='28' src='assets/img/user.jpg' class='rounded-circle m-r-5' alt=''>$username</td>
-                                        <td>$spec</td>
-                                        <td>$email</td>
-                                        <td>$city</td>
-                                        <td>$password</td>
-                                        <td>$docFees</td>
-                                        <td class='text-right'>
-                                            <div class='dropdown dropdown-action'>
-                                                <a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown'
-                                                    aria-expanded='false'><i class='fa fa-ellipsis-v'></i></a>
-                                                <div class='dropdown-menu dropdown-menu-right'>
-                                                    <a class='dropdown-item' href='edit-patient.php'><i
-                                                            class='fa fa-pencil m-r-5'></i> Edit</a>
-                                                    <a class='dropdown-item' href='#' data-toggle='modal'
-                                                        data-target='#delete_patient'><i class='fa fa-trash-o m-r-5'></i>
-                                                        Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
+                                        <td>$doctor</td>
+                                        <td>$pid</td>
+                                        <td>$ID</td>
+                                        <td>$fname</td>
+                                        <td>$lname</td>
+                                        <td>$appdate</td>
+                                        <td>$disease</td>
+                                        <td>$allergy</td>
+                                        <td>$pres</td>
                                     </tr>";
                                     }
 
                                 ?>
+                                    
                                 </tbody>
                             </table>
                             <br>
@@ -202,6 +197,8 @@ if(isset($_POST['docsub1']))
             </div>
         </div>
     </div>
+
+</div>
 </div>
 <div class="sidebar-overlay" data-reff=""></div>
 <script src="assets/js/jquery-3.2.1.min.js"></script>
@@ -209,16 +206,18 @@ if(isset($_POST['docsub1']))
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.slimscroll.js"></script>
 <script src="assets/js/select2.min.js"></script>
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.bootstrap4.min.js"></script>
 <script src="assets/js/moment.min.js"></script>
 <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="assets/js/app.js"></script>
-</body>
-
 <script>
-var Active = document.getElementById('doctors');
+var Active = document.getElementById('prescriptions');
 Active.classList.add('active');
 </script>
+</body>
 
-<!-- doctors23:17-->
+
+<!-- patients23:19-->
 
 </html>

@@ -6,7 +6,7 @@
 include('./include/config.php');
 
 include('newfunc.php');
-$_SESSION['username'] = "admin"; #Hard coded remove when done
+#$_SESSION['username'] = "admin"; #Hard coded remove when done
 if (!isset($_SESSION['username'])) {
     die('You are not Authorized');
 }
