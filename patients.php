@@ -4,9 +4,11 @@
 ?>
 <?php 
 include('./include/config.php');
-
 include('newfunc.php');
-$_SESSION['username'] = "admin";
+$_SESSION['username'] = "admin"; #Hard coded remove when done
+if (!isset($_SESSION['username'])) {
+    die('You are not Authorized');
+}
 $admin_user = $_SESSION['username'];
 if (isset($_SESSION['id'])) {
     $admin_id = $_SESSION['id'];

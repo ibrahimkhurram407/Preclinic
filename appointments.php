@@ -1,16 +1,111 @@
 <?php 
-    require_once "includes/header.php";
-    require_once "includes/sidebar.php";
+    require_once "include/header.php";
+    require_once "include/sidebar.php";
 ?>
+<?php 
+include('./include/config.php');
 
+include('newfunc.php');
+$_SESSION['username'] = "admin"; #Hard coded remove when done
+if (!isset($_SESSION['username'])) {
+    die('You are not Authorized');
+}
+$admin_user = $_SESSION['username'];
+if (isset($_SESSION['id'])) {
+    $admin_id = $_SESSION['id'];
+}else {
+    $id_query = mysqli_query($con, "SELECT id FROM admintb WHERE username = " . $admin_user . ";");
+  if ($id_query) {
+    // Fetch the result as an associative array
+    $id_row = mysqli_fetch_assoc($id_query);
+
+    // Access the 'id' column
+    $admin_id = $id_row['id'];
+  } else {
+    echo "Error: " . mysqli_error($con);
+  }
+
+}
+
+// Query for Appointments
+$check_query_appointments = mysqli_query($con, "SELECT * FROM appointmenttb;");
+
+if ($check_query_appointments === false) {
+    // Handle the error, print it for debugging purposes
+    echo "Error in Appointments query: " . mysqli_error($con);
+} else {
+    // Successful query, proceed
+    $AmountOfAppointments = mysqli_num_rows($check_query_appointments);
+}
+
+// Query for Prescriptions
+$check_query_prescriptions = mysqli_query($con, "SELECT * FROM prestb;");
+
+if ($check_query_prescriptions === false) {
+    // Handle the error, print it for debugging purposes
+    echo "Error in Prescriptions query: " . mysqli_error($con);
+} else {
+    // Successful query, proceed
+    $AmountOfPrescriptions = mysqli_num_rows($check_query_prescriptions);
+}
+
+// Query for Doctors
+$check_query_prescriptions = mysqli_query($con, "SELECT * FROM doctb;");
+
+if ($check_query_prescriptions === false) {
+    // Handle the error, print it for debugging purposes
+    echo "Error in Prescriptions query: " . mysqli_error($con);
+} else {
+    // Successful query, proceed
+    $AmountOfDoctors = mysqli_num_rows($check_query_prescriptions);
+}
+
+// Query for Patients
+$check_query_prescriptions = mysqli_query($con, "SELECT * FROM patreg;");
+
+if ($check_query_prescriptions === false) {
+    // Handle the error, print it for debugging purposes
+    echo "Error in Prescriptions query: " . mysqli_error($con);
+} else {
+    // Successful query, proceed
+    $AmountOfPatients = mysqli_num_rows($check_query_prescriptions);
+}
+
+if(isset($_POST['docsub']))
+{
+  $doctor=$_POST['doctor'];
+  $dpassword=$_POST['dpassword'];
+  $demail=$_POST['demail'];
+  $spec=$_POST['special'];
+  $docFees=$_POST['docFees'];
+  $query="insert into doctb(username,password,email,spec,docFees)values('$doctor','$dpassword','$demail','$spec','$docFees')";
+  $result=mysqli_query($con,$query);
+  if($result)
+    {
+      echo "<script>alert('Doctor added successfully!');</script>";
+  }
+}
+
+
+if(isset($_POST['docsub1']))
+{
+  $demail=$_POST['demail'];
+  $query="delete from doctb where email='$demail';";
+  $result=mysqli_query($con,$query);
+  if($result)
+    {
+      echo "<script>alert('Doctor removed successfully!');</script>";
+  }
+  else{
+    echo "<script>alert('Unable to delete!');</script>";
+  }
+}
+?>
         <div class="page-wrapper">
             <div class="content">
                 <div class="row">
                     <div class="col-sm-4 col-3">
                         <h4 class="page-title">Appointments</h4>
-                    </div>
-                    <div class="col-sm-8 col-9 text-right m-b-20">
-                        <a href="add-appointment.php" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Appointment</a>
                     </div>
                 </div>
 				<div class="row">
@@ -20,55 +115,59 @@
 								<thead>
 									<tr>
 										<th>Appointment ID</th>
+										<th>Patient ID</th>
 										<th>Patient Name</th>
-										<th>Age</th>
-										<th>Doctor Name</th>
-										<th>Department</th>
+                                        <th>Gender</th>
+										<th>Patient Email</th>
+                                        <th>Contact</th>
+                                        <th>Doctor Name</th>
+                                        <th>Consultancy Fees</th>
 										<th>Appointment Date</th>
-										<th>Appointment Time</th>
 										<th>Status</th>
-										<th class="text-right">Action</th>
+										    <th class="text-right">Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>APT0001</td>
-										<td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> Denise Stevens</td>
-										<td>35</td>
-										<td>Henry Daniels</td>
-										<td>Cardiology</td>
-										<td>30 Dec 2018</td>
-										<td>10:00am - 11:00am</td>
-										<td><span class="custom-badge status-red">Inactive</span></td>
-										<td class="text-right">
-											<div class="dropdown dropdown-action">
-												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="edit-appointment.php"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>APT0002</td>
-										<td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> Denise Stevens</td>
-										<td>35</td>
-										<td>Henry Daniels</td>
-										<td>Cardiology</td>
-										<td>30 Dec 2018</td>
-										<td>10:00am - 11:00am</td>
-										<td><span class="custom-badge status-green">Active</span></td>
-										<td class="text-right">
-											<div class="dropdown dropdown-action">
-												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="edit-appointment.php"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-												</div>
-											</div>
-										</td>
-									</tr>
+                                <?php 
+
+include('include/config.php');
+global $con;
+
+$query = "select * from appointmenttb;";
+$result = mysqli_query($con,$query);
+while ($row = mysqli_fetch_array($result)){
+?>
+            <tr>
+                
+                <td><?php echo $row['ID'];?></td>
+                <td><?php echo $row['pid'];?></td>
+                <td><?php echo $row['fname'] . " " . $row['lname'];?></td>
+                <td><?php echo $row['gender'];?></td>
+                <td><?php echo $row['email'];?></td>
+                <td><?php echo $row['contact'];?></td>
+                <td><?php echo $row['doctor'];?></td>
+                <td><?php echo $row['docFees'];?></td>
+                <td><?php echo $row['appdate'];?></td>
+                <td><?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
+                {
+                echo "<span class='custom-badge status-green'>Active</span>";
+                }
+                if(($row['userStatus']==0) && ($row['doctorStatus']==1) or ($row['userStatus']==1) && ($row['doctorStatus']==0))  
+                {
+                echo "<span class='custom-badge status-red'>Inactive</span>";
+                }
+                ?></td>
+                <td class="text-right">
+                    <div class="dropdown dropdown-action">
+                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="edit-appointment.php"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <?php } ?>
 								</tbody>
 							</table>
 						</div>
@@ -316,6 +415,11 @@
                 });
             });
      </script>
+     
+<script>
+    var Active = document.getElementById('appointments');
+    Active.classList.add('active');
+</script>
 </body>
 
 
