@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,32 +16,28 @@
 		<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
 </head>
-
 <body>
     <div class="main-wrapper account-wrapper">
         <div class="account-page">
 			<div class="account-center">
 				<div class="account-box">
-                    <form action="http://dreamguys.co.in/preclinic/template/index.php" class="form-signin">
+                    <form method="post" action="doctorLoginFunc.php" class="form-signin">
 						<div class="account-logo">
                             <a href="index.php"><img src="assets/img/logo-dark.png" alt=""></a>
                         </div>
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" autofocus="" class="form-control">
+                            <input type="text" class="form-control" placeholder="User Name *"
+                                            name="username3" onkeydown="return alphaOnly(event);" required />
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control">
+                            <input type="password" class="form-control" placeholder="Password *"
+                                            name="password3" required />
                         </div>
-                        <div class="form-group text-right">
-                            <a href="forgot-password.php">Forgot your password?</a>
-                        </div>
+                        
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary account-btn">Login</button>
-                        </div>
-                        <div class="text-center register-link">
-                            Don’t have an account? <a href="register.php">Register Now</a>
+                            <button type="submit" class="btn btn-primary account-btn"  name="docsub1" value="Login">Login</button>
                         </div>
                     </form>
                 </div>

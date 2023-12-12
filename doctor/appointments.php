@@ -5,9 +5,11 @@
 <?php
 
 include('newfunc.php');
-if (!isset($_SESSION['username'])) {
-    die('You are not Authorized');
+if (!isset($_SESSION['dname'])) {
+    header("location: ./login.php");
+    die("You are not authorised");
 }
+
 
 // Query for Appointments
 $check_query_appointments = mysqli_query($con, "SELECT * FROM appointmenttb;");

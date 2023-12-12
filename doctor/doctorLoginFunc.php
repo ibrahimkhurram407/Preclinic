@@ -1,5 +1,6 @@
 <?php
 include(__DIR__ . '/../admin/include/config.php');
+session_start();
 if(isset($_POST['docsub1'])){
 	$dname=$_POST['username3'];
 	$dpass=$_POST['password3'];
@@ -12,7 +13,7 @@ if(isset($_POST['docsub1'])){
 		      $_SESSION['dname']=$row['username'];
           $_SESSION['dID']=$row['id'];
     }
-		header("Location:doctor-panel.php");
+		header("Location:index.php");
 	}
 	else{
     // header("Location:error2.php");

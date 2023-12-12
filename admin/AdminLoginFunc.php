@@ -17,7 +17,7 @@ if(isset($_POST['adsub'])){
 		$admin_id = $row['id'];
 		$_SESSION['id'] = $admin_id;
 		$_SESSION['username']=$username;
-		header("Location:admin-panel1.php");
+		header("Location:index.php");
 	}
 	else
 		// header("Location:error2.php");

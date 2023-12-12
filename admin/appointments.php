@@ -6,7 +6,8 @@
 
 include('newfunc.php');
 if (!isset($_SESSION['username'])) {
-    die('You are not Authorized');
+    header("location: ./login.php");
+    die("You are not authorised");
 }
 
 // Query for Appointments

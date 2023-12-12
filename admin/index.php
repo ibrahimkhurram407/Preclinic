@@ -4,10 +4,10 @@
 ?>
 <?php 
 include('newfunc.php');
-if (!isset($_SESSION['dname'])) {
+if (!isset($_SESSION['username'])) {
+    header("location: ./login.php");
     die("You are not authorised");
 }
-
 // Query for Appointments
 $check_query_appointments = mysqli_query($con, "SELECT * FROM appointmenttb;");
 

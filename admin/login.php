@@ -1,11 +1,9 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 
 <!-- login23:11-->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -23,40 +21,37 @@
 <body>
     <div class="main-wrapper account-wrapper">
         <div class="account-page">
-			<div class="account-center">
-				<div class="account-box">
-                    <form action="http://dreamguys.co.in/preclinic/template/index.php" class="form-signin">
-						<div class="account-logo">
+            <div class="account-center">
+                <div class="account-box">
+                    <form method="post" action="AdminLoginFunc.php" class="form-signin">
+                        <div class="account-logo">
                             <a href="index.php"><img src="assets/img/logo-dark.png" alt=""></a>
                         </div>
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" autofocus="" class="form-control">
+                            <input type="text" class="form-control" placeholder="User Name *"
+                                            name="username1" onkeydown="return alphaOnly(event);" required />
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control">
-                        </div>
-                        <div class="form-group text-right">
-                            <a href="forgot-password.php">Forgot your password?</a>
+                            <input type="password" class="form-control" placeholder="Password *"
+                                            name="password2" required />
                         </div>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary account-btn">Login</button>
-                        </div>
-                        <div class="text-center register-link">
-                            Don’t have an account? <a href="register.php">Register Now</a>
+                            <button type="submit" class="btn btn-primary account-btn" name="adsub" value="Login">Login</button>
                         </div>
                     </form>
                 </div>
-			</div>
+            </div>
         </div>
     </div>
     <script src="assets/js/jquery-3.2.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 
 
 <!-- login23:12-->
+
 </html>

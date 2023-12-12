@@ -4,11 +4,10 @@
 ?>
 <?php 
 include('newfunc.php');
-$_SESSION['username'] = "admin"; #Hard coded remove when done
 if (!isset($_SESSION['username'])) {
-    die('You are not Authorized');
+    header("location: ./login.php");
+    die("You are not authorised");
 }
-
 // Query for Appointments
 $check_query_appointments = mysqli_query($con, "SELECT * FROM appointmenttb;");
 

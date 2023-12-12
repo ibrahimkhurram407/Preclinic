@@ -1,9 +1,14 @@
 <?php 
+    include('doctorLoginFunc.php');
     require_once "include/header.php";
     require_once "include/sidebar.php";
 ?>
 <?php 
-include('doctorLoginFunc.php');
+
+if (!isset($_SESSION['dname'])) {
+    header("location: ./login.php");
+    die("You are not authorised");
+}
 
 // Query for Appointments
 $check_query_appointments = mysqli_query($con, "SELECT * FROM appointmenttb WHERE doctor = '$doctor'");

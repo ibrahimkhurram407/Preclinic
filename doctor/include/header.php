@@ -1,8 +1,9 @@
 <?php 
 include(__DIR__ . '/../../admin/include/config.php');
+error_reporting(0);
 session_start();
-$_SESSION['dname'] = "zain";#Hard coded remove when done
 if (!isset($_SESSION['dname'])) {
+    header("location: ./login.php");
     die("You are not authorised");
 }
 $doctor = $_SESSION['dname'];

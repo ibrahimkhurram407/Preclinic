@@ -1,7 +1,11 @@
 <?php 
 include('./include/config.php');
 session_start();
-$_SESSION['username'] = "admin"; #Hard coded remove when done
+#$_SESSION['username'] = "admin"; #Hard coded remove when done
+if (!isset($_SESSION['username'])) {
+    header("location: ./login.php");
+    die("You are not authorised");
+}
 $admin_user = $_SESSION['username'];
 global $admin_id;
 if (isset($_SESSION['id'])) {

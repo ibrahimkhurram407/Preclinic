@@ -24,14 +24,6 @@
                 <li id="manage-cities">
                     <a href="manage-cities.php"><i class="fa fa-flag-o"></i> <span>Manage Cities</span></a>
                 </li>
-                <li class="submenu">
-                    <a href="#"><i class="fa fa-columns"></i> <span>Pages</span> <span class="menu-arrow"></span></a>
-                    <ul style="display: none;">
-                        <li><a href="login.php"> Login </a></li>
-                        <li><a href="register.php"> Register </a></li>
-                        <li><a href="error-404.php">404 Error </a></li>
-                    </ul>
-                </li>
             </ul>
         </div>
     </div>
