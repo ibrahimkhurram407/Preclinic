@@ -1,11 +1,12 @@
 <?php
 session_start();
-include('./include/config.php');
+include('./admin/include/config.php');
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit();
 }
 if(isset($_POST['patsub1'])){
+  echo"something";
 	$fname=$_POST['fname'];
   $lname=$_POST['lname'];
   $gender=$_POST['gender'];
@@ -23,7 +24,7 @@ if(isset($_POST['patsub1'])){
         $_SESSION['gender'] = $_POST['gender'];
         $_SESSION['contact'] = $_POST['contact'];
         $_SESSION['email'] = $_POST['email'];
-        header("Location:admin-panel.php");
+        header("Location:login.php");
     } 
 
     $query1 = "select * from patreg;";

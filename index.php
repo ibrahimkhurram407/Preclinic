@@ -1,29 +1,5 @@
 <?php
   require_once "includes/header.php";
-  include('./admin/include/config.php');
-  include('func.php');  
-  include('newfunc.php');
-
-  $_SESSION['pid'] = 1;
-  $_SESSION['fname'] = "dum";
-  $_SESSION['lname'] = "dum";
-  $_SESSION['email'] = "dum@gmail.com";
-  $_SESSION['gender'] = "Male";
-  $_SESSION['contact'] = "9876543210";
-
-  if (!(isset($_SESSION['pid'],$_SESSION['fname'] ,$_SESSION['lname'], $_SESSION['email'], $_SESSION['fname'], $_SESSION['lname'], $_SESSION['contact']))){
-      header("location: ./login.php");
-      die("You are not authorised");
-  }
-  
-    $pid = $_SESSION['pid'];
-    $fname = $_SESSION['fname'];
-    $lname = $_SESSION['lname'];
-    $email = $_SESSION['email'];
-    $fname = $_SESSION['fname'];
-    $gender = $_SESSION['gender'];
-    $lname = $_SESSION['lname'];
-    $contact = $_SESSION['contact'];
   
   // Query for Appointments
   $check_query_appointments = mysqli_query($con, "SELECT * FROM appointmenttb WHERE fname = '$fname' AND lname = '$lname'");

@@ -21,23 +21,21 @@
         <div class="account-page">
 			<div class="account-center">
 				<div class="account-box">
-                    <form method="post" action="doctorLoginFunc.php" class="form-signin">
+                    <form method="POST" action="func.php" class="form-signin">
 						<div class="account-logo">
                             <a href="index.php"><img src="admin/assets/img/logo-dark.png" alt=""></a>
                         </div>
                         <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" class="form-control" placeholder="User Name *"
-                                            name="username3" onkeydown="return alphaOnly(event);" required />
+                            <label>Email</label>
+                            <input type="text" name="email" class="form-control" placeholder="enter email ID" required/>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password *"
-                                            name="password3" required />
+                            <input type="password" class="form-control" name="password2" placeholder="enter password" required/>
                         </div>
                         
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary account-btn"  name="docsub1" value="Login">Login</button>
+                            <input type="submit" id="inputbtn" name="patsub" value="Login" class="btn btn-primary acciybt-btn">
                         </div>
                         <div class="text-center register-link">
                             Don’t have an account? <a href="register.php">Register Now</a>

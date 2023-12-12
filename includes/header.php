@@ -1,3 +1,23 @@
+<?php 
+include('./admin/include/config.php');
+include('func.php');  
+include('newfunc.php');
+
+if (!(isset($_SESSION['pid'],$_SESSION['fname'] ,$_SESSION['lname'], $_SESSION['email'], $_SESSION['fname'], $_SESSION['lname'], $_SESSION['contact']))){
+    header("location: ./login.php");
+    die("You are not authorised");
+}
+
+  $pid = $_SESSION['pid'];
+  $fname = $_SESSION['fname'];
+  $lname = $_SESSION['lname'];
+  $email = $_SESSION['email'];
+  $fname = $_SESSION['fname'];
+  $gender = $_SESSION['gender'];
+  $lname = $_SESSION['lname'];
+  $contact = $_SESSION['contact'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,8 +88,8 @@
                             <div class="dropdown" id="dropdown">
                                 <button class="dropbtn">Account</button>
                                 <div class="dropdown-content">
-                                    <a href="#">Account Details</a>
-                                    <a href="#">Logout</a>
+                                    <a href="<?php echo "account-details.php?table=patreg&id=$pid&page=index.php";?>">Account Details</a>
+                                    <a href="logout.php">Logout</a>
                                 </div>
                             </div>
                         </div>
