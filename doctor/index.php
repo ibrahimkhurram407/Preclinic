@@ -1,7 +1,8 @@
 <?php 
-    include('doctorLoginFunc.php');
+    
     require_once "include/header.php";
     require_once "include/sidebar.php";
+    include('doctorLoginFunc.php');
 ?>
 <?php 
 
@@ -93,8 +94,6 @@ if(isset($_GET['cancel']))
     </div>
 </div>
 </div>
-</div>
-</div>
 <div class="sidebar-overlay" data-reff=""></div>
 <script src="assets/js/jquery-3.2.1.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
@@ -104,8 +103,8 @@ if(isset($_GET['cancel']))
 <script src="assets/js/chart.js"></script>
 <script src="assets/js/app.js"></script>
 <script>
-	var Active = document.getElementById('dashboard');
-	Active.classList.add('active');
+var Active = document.getElementById('dashboard');
+Active.classList.add('active');
 </script>
 </body>
 

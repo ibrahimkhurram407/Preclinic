@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-include('func1.php');
+include('doctorLoginFunc.php');
 $pid='';
 $ID='';
 $appdate='';
@@ -91,11 +91,11 @@ if(isset($_POST['prescribe']) && isset($_POST['pid']) && isset($_POST['ID']) && 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
      <ul class="navbar-nav mr-auto">
        <li class="nav-item">
-        <a class="nav-link" href="logout1.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+        <a class="nav-link" href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
         
       </li>
        <li class="nav-item">
-       <a class="nav-link" href="doctor-panel.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Back</a>
+       <a class="nav-link" href="appointments.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Back</a>
       </li>
     </ul>
   </div>
