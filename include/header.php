@@ -1,10 +1,31 @@
+<?php 
+include('./include/config.php');
+session_start();
+$_SESSION['username'] = "admin"; #Hard coded remove when done
+$admin_user = $_SESSION['username'];
+global $admin_id;
+if (isset($_SESSION['id'])) {
+    $admin_id = $_SESSION['id'];
+}else {
+    $id_query = mysqli_query($con, "SELECT id FROM admintb WHERE username = '" . $admin_user . "';");
+  if ($id_query) {
+    // Fetch the result as an associative array
+    $id_row = mysqli_fetch_assoc($id_query);
+
+    // Access the 'id' column
+    $admin_id = $id_row['id'];
+  } else {
+    echo "Error: " . mysqli_error($con);
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <title>CARE GROUP - We help you!</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
@@ -20,7 +41,7 @@
         <div class="header">
             <div class="header-left">
                 <a href="index.php" class="logo">
-                    <img src="assets/img/logo.png" width="35" height="35" alt=""> <span>Preclinic</span>
+                    <img src="assets/img/logo.png" width="35" height="35" alt=""> <span>CARE GROUP</span>
                 </a>
             </div>
             <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
@@ -33,18 +54,16 @@
                         <span>Admin</span>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="profile.php">My Profile</a>
-                        <a class="dropdown-item" href="login.php">Logout</a>
+                        <a class="dropdown-item" href="<?php global $admin_id; echo "account-details.php?table=admintb&id=$admin_id&page=index.php";?>">My Profile</a>
+                        <a class="dropdown-item" href="logout.php">Logout</a>
                     </div>
                 </li>
             </ul>
             <div class="dropdown mobile-user-menu float-right">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="profile.php">My Profile</a>
-                    <a class="dropdown-item" href="edit-profile.php">Edit Profile</a>
-                    <a class="dropdown-item" href="settings.php">Settings</a>
-                    <a class="dropdown-item" href="login.php">Logout</a>
+                    <a class="dropdown-item" href="<?php echo "account-details.php?table=admintb&id=$admin_id&page=index.php";?>">My Profile</a>
+                    <a class="dropdown-item" href="logout.php">Logout</a>
                 </div>
             </div>        
         </div>

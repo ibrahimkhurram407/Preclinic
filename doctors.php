@@ -3,28 +3,11 @@
     require_once "include/sidebar.php";
 ?>
 <?php 
-include('./include/config.php');
 
 include('newfunc.php');
-#$_SESSION['username'] = "admin"; #Hard coded remove when done
+$_SESSION['username'] = "admin"; #Hard coded remove when done
 if (!isset($_SESSION['username'])) {
     die('You are not Authorized');
-}
-$admin_user = $_SESSION['username'];
-if (isset($_SESSION['id'])) {
-    $admin_id = $_SESSION['id'];
-}else {
-    $id_query = mysqli_query($con, "SELECT id FROM admintb WHERE username = " . $admin_user . ";");
-  if ($id_query) {
-    // Fetch the result as an associative array
-    $id_row = mysqli_fetch_assoc($id_query);
-
-    // Access the 'id' column
-    $admin_id = $id_row['id'];
-  } else {
-    echo "Error: " . mysqli_error($con);
-  }
-
 }
 
 // Query for Appointments
@@ -154,10 +137,11 @@ if(isset($_POST['docsub1']))
                                     $city = $row['city'];
                                     $password = $row['password'];
                                     $docFees = $row['docFees'];
-                                    
+                                    $editAccountDetailsURL = 'account-details.php?table=doctb&id=' . $id . "&page=doctors.php";
+                                    $deleteAccountDetailsURL = "delete.php?table=doctb&id=$id&page=doctors.php";
                                     echo "<tr>
                                         <td>$id</td>
-                                        <td><img width='28 height='28' src='assets/img/user.jpg' class='rounded-circle m-r-5' alt=''>$username</td>
+                                        <td><img width='28' height='28' src='assets/img/user.jpg' class='rounded-circle m-r-5' alt=''>$username</td>
                                         <td>$spec</td>
                                         <td>$email</td>
                                         <td>$city</td>
@@ -165,18 +149,15 @@ if(isset($_POST['docsub1']))
                                         <td>$docFees</td>
                                         <td class='text-right'>
                                             <div class='dropdown dropdown-action'>
-                                                <a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown'
-                                                    aria-expanded='false'><i class='fa fa-ellipsis-v'></i></a>
+                                                <a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown' aria-expanded='false'><i class='fa fa-ellipsis-v'></i></a>
                                                 <div class='dropdown-menu dropdown-menu-right'>
-                                                    <a class='dropdown-item' href='edit-patient.php'><i
-                                                            class='fa fa-pencil m-r-5'></i> Edit</a>
-                                                    <a class='dropdown-item' href='#' data-toggle='modal'
-                                                        data-target='#delete_patient'><i class='fa fa-trash-o m-r-5'></i>
-                                                        Delete</a>
+                                                    <a class='dropdown-item' href='$editAccountDetailsURL'><i class='fa fa-pencil m-r-5'></i> Edit</a>
+                                                    <a class='dropdown-item' href='$deleteAccountDetailsURL'><i class='fa fa-trash m-r-5'></i> Delete</a>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>";
+
                                     }
 
                                 ?>
@@ -190,19 +171,7 @@ if(isset($_POST['docsub1']))
         </div>
     </div>
 </div>
-<div id="delete_patient" class="modal fade delete-modal" role="dialog">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body text-center">
-                <img src="assets/img/sent.png" alt="" width="50" height="46">
-                <h3>Are you sure want to delete this Patient?</h3>
-                <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="sidebar-overlay" data-reff=""></div>
 <script src="assets/js/jquery-3.2.1.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
@@ -217,6 +186,14 @@ if(isset($_POST['docsub1']))
 <script>
 var Active = document.getElementById('doctors');
 Active.classList.add('active');
+ // Handle the click event to set the delete_id in the modal
+ $(document).on('click', '.delete-btn', function () {
+    var id = $(this).data('data-id');
+    id = "taraqi";
+    console.log(id + "taraqi    ");
+    $('#delete_id').val(id);
+});
+
 </script>
 
 <!-- doctors23:17-->

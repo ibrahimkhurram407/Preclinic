@@ -3,29 +3,9 @@
     require_once "include/sidebar.php";
 ?>
 <?php 
-include('./include/config.php');
-
 include('newfunc.php');
-#$_SESSION['username'] = "admin"; #Hard coded remove when done
 if (!isset($_SESSION['username'])) {
     die('You are not Authorized');
-}
-
-$admin_user = $_SESSION['username'];
-if (isset($_SESSION['id'])) {
-    $admin_id = $_SESSION['id'];
-}else {
-    $id_query = mysqli_query($con, "SELECT id FROM admintb WHERE username = " . $admin_user . ";");
-  if ($id_query) {
-    // Fetch the result as an associative array
-    $id_row = mysqli_fetch_assoc($id_query);
-
-    // Access the 'id' column
-    $admin_id = $id_row['id'];
-  } else {
-    echo "Error: " . mysqli_error($con);
-  }
-
 }
 
 // Query for Appointments

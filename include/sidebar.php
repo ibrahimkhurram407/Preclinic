@@ -29,7 +29,6 @@
                     <ul style="display: none;">
                         <li><a href="login.php"> Login </a></li>
                         <li><a href="register.php"> Register </a></li>
-                        <li><a href="profile.php"> Profile </a></li>
                         <li><a href="error-404.php">404 Error </a></li>
                     </ul>
                 </li>
