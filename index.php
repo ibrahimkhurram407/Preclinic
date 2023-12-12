@@ -171,7 +171,7 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
     <div class="container">
-        <h1>Welcome to CARE GROUP</h1>
+         <h1>Welcome <?php echo " " . $fname . " " . $lname; ?></h1>
         <h2>We are team of talented designers making websites with Bootstrap</h2>
         <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
@@ -536,9 +536,9 @@
     </section><!-- End Appointment Section -->
 
 
-    <section id="appointment-history" style="margin-bottom:20px;">
+    <section id="appointment-history" style="margin-bottom:30px;">
         <div class="unique-table">
-            <h4 style="margin-bottom:15px;">Appointment History</h4>
+            <h4 style="margin-bottom:20px;">Appointment History</h4>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -624,7 +624,7 @@
 
     <section id="prescription-history">
         <div class="unique-table">
-          <h4 style="margin-bottom:15px;">Prescription History</h4>
+          <h4 style="margin-bottom:20px;">Prescription History</h4>
         <table class="table table-hover">
             <thead>
                 <tr>
