@@ -78,9 +78,11 @@ if (!(isset($_SESSION['pid'],$_SESSION['fname'] ,$_SESSION['lname'], $_SESSION['
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#appointment">Book Appointment</a></li>
                     <li><a class="nav-link scrollto" href="#appointment-history">Appointment</a></li>
                     <li><a class="nav-link scrollto" href="#prescription-history">Prescription</a></li>
                     <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                     <li class="nav-parent">
                         <div class="nav-item">
                             <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/account-icon.png"
@@ -97,9 +99,6 @@ if (!(isset($_SESSION['pid'],$_SESSION['fname'] ,$_SESSION['lname'], $_SESSION['
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-
-            <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span>
-                Appointment</a>
         </div>
     </header><!-- End Header -->
 
