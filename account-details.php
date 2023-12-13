@@ -1,5 +1,5 @@
 <?php
-include('./include/config.php');
+include('./admin/include/config.php');
 session_start();
 
 echo $_SESSION['pid'];
