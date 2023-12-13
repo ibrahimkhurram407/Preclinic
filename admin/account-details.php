@@ -1,8 +1,27 @@
 <?php
 include('./include/config.php');
-include('./include/header.php');
-include('./include/sidebar.php');
 session_start();
+#$_SESSION['username'] = "admin"; #Hard coded remove when done
+if (!isset($_SESSION['username'])) {
+    header("location: ./login.php");
+    die("You are not authorised");
+}
+$admin_user = $_SESSION['username'];
+global $admin_id;
+if (isset($_SESSION['id'])) {
+    $admin_id = $_SESSION['id'];
+}else {
+    $id_query = mysqli_query($con, "SELECT id FROM admintb WHERE username = '" . $admin_user . "';");
+  if ($id_query) {
+    // Fetch the result as an associative array
+    $id_row = mysqli_fetch_assoc($id_query);
+
+    // Access the 'id' column
+    $admin_id = $id_row['id'];
+  } else {
+    echo "Error: " . mysqli_error($con);
+  }
+}
 
 $columns = [];
 $table = $_GET['table'];

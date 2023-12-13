@@ -1,7 +1,28 @@
 <?php
-include(__DIR__ . '/../admin/include/config.php');
-include('./include/header.php');
-include('./include/sidebar.php');
+include('./../admin/include/config.php');
+error_reporting(0);
+session_start();
+if (!isset($_SESSION['dname'])) {
+    header("location: ./login.php");
+    die("You are not authorised");
+}
+$doctor = $_SESSION['dname'];
+if (isset($_SESSION['dID'])) {
+  $doctor_id = $_SESSION['dID'];
+}else {
+  $id_query = mysqli_query($con, "SELECT id FROM doctb WHERE username = '" . $doctor . "';");
+  if ($id_query) {
+    // Fetch the result as an associative array
+    $id_row = mysqli_fetch_assoc($id_query);
+
+    // Access the 'id' column
+    $doctor_id = $id_row['id'];
+  } else {
+    echo "Error: " . mysqli_error($con);
+  }
+}
+// include('./include/header.php');
+// include('./include/sidebar.php');
 session_start();
 
 $columns = [];

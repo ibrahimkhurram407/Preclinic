@@ -2,14 +2,6 @@
 include('./admin/include/config.php');
 session_start();
 
-echo $_SESSION['pid'];
-echo $_SESSION['username'];
-echo $_SESSION['email'];
-echo $_SESSION['fname'];
-echo $_SESSION['gender'];
-echo $_SESSION['lname'];
-echo $_SESSION['contact'];
-
 $columns = [];
 $table = $_GET['table'];
 $id = $_GET['id'];
@@ -85,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link href="assets/img/favicon.png" rel="icon">
     <title>Account Details</title>
     <style>
         body {
@@ -140,24 +133,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <a class="navbar-brand" href="<?php echo $page; ?>"><i class="fa fa-user-plus" aria-hidden="true"></i> CARE GROUP </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
     <div>
         <h2>Account Details</h2>
