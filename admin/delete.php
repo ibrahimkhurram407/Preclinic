@@ -1,12 +1,20 @@
 <?php
   require_once './include/config.php';
+  session_start();
+  if (!isset($_SESSION['username'])) {
+    header("location: ./login.php");
+    die("You are not authorised");
+}
 $table = $_GET['table'];
 $id = $_GET['id'];
 $page = $_GET['page'];
 if (isset($_GET['table']) && isset($_GET['id']) && isset($_GET['page'])) {
     // Handle the deletion when the form is submitted
     $delete_id = $id;
-    if ($page == 'patreg') {
+    echo $table;
+    echo $delete_id;
+    echo $page;
+    if ($table == 'patreg') {
         $delete_query = "DELETE FROM $table WHERE pid = $delete_id";
     }else {
         $delete_query = "DELETE FROM $table WHERE id = $delete_id";

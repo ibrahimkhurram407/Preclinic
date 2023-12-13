@@ -82,7 +82,21 @@ if(isset($_POST['docsub1']))
     echo "<script>alert('Unable to delete!');</script>";
   }
 }
+// Check if the form is submitted
+if (isset($_POST['deleteCity'])) {
+    // Get the city to delete
+    $cityToDelete = $_POST['cityToDelete'];
 
+    // Delete doctors with the specified city
+    $deleteQuery = "DELETE FROM doctb WHERE city = '$cityToDelete'";
+    $deleteResult = mysqli_query($con, $deleteQuery);
+
+    if ($deleteResult) {
+        echo "Doctors in $cityToDelete have been deleted successfully.";
+    } else {
+        echo "Error deleting doctors: " . mysqli_error($con);
+    }
+}
 
 ?>
 
