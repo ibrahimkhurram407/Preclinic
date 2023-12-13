@@ -97,7 +97,7 @@ CREATE TABLE `doctb` (
   `id` int PRIMARY Key  AUTO_INCREMENT NOT NULL,
   `username` varchar(50) NOT NULL UNIQUE,
   `password` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL UNIQUE,
+  `email` varchar(50) NOT NULL,
   `city` varchar(30) NOT NULL,
   `spec` varchar(50) NOT NULL,
   `docFees` int(10) NOT NULL
