@@ -147,107 +147,95 @@
 <section id="hero" class="d-flex align-items-center">
     <div class="container">
         <h1>Welcome <?php echo " " . $fname . " " . $lname; ?></h1>
-        <h2>We are team of talented designers making websites with Bootstrap</h2>
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <h2>Your Health Is Our Top Priority</h2>
+        <a href="#why-us" class="btn-get-started scrollto">Get Started</a>
     </div>
 </section><!-- End Hero -->
 
 <main id="main">
-
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-4 d-flex align-items-stretch">
                     <div class="content">
                         <h3>Why Choose CARE GROUP?</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                            Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus
-                            optio ad corporis.
+                            We stands out for several reasons. First and foremost,We renowned for its exceptional quality of care and commitment to patient well-being. 
+                            The hospital boasts a team of highly skilled and compassionate medical professionals 
+                            who prioritize the health and comfort of their patients.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-8 d-flex align-items-stretch">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
-                        <div class="row">
-                            <div class="col-xl-4 d-flex align-items-stretch">
-                                <div class="icon-box mt-4 mt-xl-0">
-                                    <i class="bx bx-receipt"></i>
-                                    <h4>Corporis voluptates sit</h4>
-                                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
-                                        aliquip</p>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 d-flex align-items-stretch">
-                                <div class="icon-box mt-4 mt-xl-0">
-                                    <i class="bx bx-cube-alt"></i>
-                                    <h4>Ullamco laboris ladore pan</h4>
-                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                        deserunt</p>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 d-flex align-items-stretch">
-                                <div class="icon-box mt-4 mt-xl-0">
-                                    <i class="bx bx-images"></i>
-                                    <h4>Labore consequatur</h4>
-                                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere
-                                    </p>
-                                </div>
-                            </div>
+                    <div class="row">
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                        <div class="icon-box mt-4 mt-xl-0">
+                            <i class="bx bx-receipt"></i>
+                            <h4>Comprehensive Medical Care</h4>
+                            <p>We provides a wide range of medical services, including preventive care, diagnostic tests, and treatment options. From routine check-ups to complex surgeries,
+                            we have the expertise and resources to address various healthcare needs.                    </p>
                         </div>
+                        </div>
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                        <div class="icon-box mt-4 mt-xl-0">
+                            <i class="bx bx-cube-alt"></i>
+                            <h4>Specialized Treatments and Procedures</h4>
+                            <p>We excels in offering specialized treatments and procedures across different medical disciplines. Whether it's cardiology, orthopedics, oncology,
+                            or neurology, we have a team of highly skilled specialists who provide advanced and personalized care.</p>
+                        </div>
+                        </div>
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                        <div class="icon-box mt-4 mt-xl-0">
+                            <i class="bx bx-images"></i>
+                            <h4>Emergency Services</h4>
+                            <p>We understands the importance of immediate medical attention during emergencies. We have a dedicated emergency department equipped with 
+                            state-of-the-art facilities and a highly trained team that is available 24/7 to handle any urgent medical situations.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
                     </div><!-- End .content-->
                 </div>
             </div>
-
         </div>
     </section><!-- End Why Us Section -->
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
         <div class="container-fluid">
-
             <div class="row">
                 <div
                     class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-                    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
                 </div>
-
                 <div
                     class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                    <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-                    <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima
-                        temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam
-                        sint et id nulla tenetur. Suscipit aut voluptate.</p>
+                    <h3>Welcome to Our Medical Services</h3>
+                    <p>Providing high-quality healthcare services to meet your medical needs. Our team of dedicated professionals is committed to your well-being and comfort. Explore our services below:</p>
 
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                            excepturi sint occaecati cupiditate non provident</p>
+                        <div class="icon"><i class="bx bx-heart"></i></div>
+                        <h4 class="title"><a href="">Cardiology</a></h4>
+                        <p class="description">Comprehensive heart care to ensure a healthy cardiovascular system.</p>
                     </div>
 
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-gift"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                            praesentium voluptatum deleniti atque</p>
+                        <div class="icon"><i class="bx bx-capsule"></i></div>
+                        <h4 class="title"><a href="">Internal Medicine</a></h4>
+                        <p class="description">Diagnosis and treatment of a wide range of medical conditions.</p>
                     </div>
 
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-atom"></i></div>
-                        <h4 class="title"><a href="">Dine Pad</a></h4>
-                        <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis
-                            odit. Sunt aut deserunt minus aut eligendi omnis</p>
+                        <div class="icon"><i class="bx bx-dna"></i></div>
+                        <h4 class="title"><a href="">Laboratory Services</a></h4>
+                        <p class="description">State-of-the-art laboratory for accurate and timely test results.</p>
                     </div>
-
                 </div>
             </div>
-
         </div>
-    </section><!-- End About Section -->
+    </section>
+    <!-- End About Section -->
 
     <!-- ======= Appointment Section ======= -->
     <section id="appointment" class="appointment section-bg">
@@ -255,9 +243,7 @@
 
             <div class="section-title">
                 <h2>Make an Appointment</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>Schedule your appointment with us to receive personalized and professional healthcare services. Our team is dedicated to providing timely and compassionate care to meet your medical needs. Whether it's a routine check-up or a specialized consultation, we are here to ensure your well-being. Take the first step towards a healthier future by making an appointment today.</p>
             </div>
 
             <form style="max-width: 80vw;" class="form-group" method="post" action="index.php">
@@ -511,9 +497,12 @@
     </section><!-- End Appointment Section -->
 
 
-    <section id="appointment-history" style="margin-bottom:30px;">
-        <div class="unique-table">
-            <h4 style="margin-bottom:20px;">Appointment History</h4>
+    <section id="appointment-history">
+        <div class="section-title">
+            <h2>Appointment History</h2>
+            <p style="padding:20px 50px;">
+                View your complete appointment history to track and manage your medical appointments. Gain insights into past consultations, scheduled visits, and any follow-up appointments. We prioritize your health and well-being, providing a comprehensive record of your medical history for your convenience.
+            </p>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -580,25 +569,14 @@
                 </tbody>
             </table>
         </div>
-        <style>
-        .unique-table {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .unique-table table {
-            text-align width: 80%;
-            float: center;
-        }
-        </style>
     </section>
 
     <section id="prescription-history">
-        <div class="unique-table">
-            <h4 style="margin-bottom:20px;">Prescription History</h4>
+        <div class="section-title">
+            <h2>Prescription History</h2>
+            <p style="padding:20px 50px;">
+                View your complete prescription history to keep track of medications and treatments. Our detailed prescription records provide insights into your healthcare journey. Explore the list of prescribed medications, dosage information, and relevant details. Stay informed about your health and make informed decisions with our comprehensive prescription history feature.
+            </p>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -662,9 +640,9 @@
 
             <div class="section-title">
                 <h2>Gallery</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>
+                    Explore our gallery to view a collection of images showcasing our facilities, team, and moments captured during various medical events. We are proud to share glimpses of our commitment to providing exceptional healthcare services and creating a welcoming environment for our patients.
+                </p>
             </div>
         </div>
 
@@ -746,7 +724,7 @@
 
         <div class="section-title">
         <h2>Contact</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <p>Have questions or need assistance? Feel free to get in touch with our team. We are here to help you with any inquiries or concerns you may have. Your feedback is valuable to us.</p>
         </div>
     </div>
 
@@ -793,15 +771,14 @@
                 </div>
             </div>
             <div class="form-group mt-3">
-            <input type="tel" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" minlength="10" maxlength="10" required />
+                <input type="tel" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" minlength="10" maxlength="10" required />
             </div>
             <div class="form-group mt-3">
-            <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;" required></textarea>
+                <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;" required></textarea>
             </div>
-            <div class="text-center"><input type="submit" name="btnSubmit" class="btn btn-primary"   value="Send Message" /></div>
+                <div class="text-center"><input type="submit" name="btnSubmit" class="btn btn-primary"   value="Send Message" /></div>
             </form>
-
-        </div>
+            </div>
 
         </div>
 
