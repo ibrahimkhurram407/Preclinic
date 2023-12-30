@@ -9,10 +9,10 @@
 <body>
 <?php
 include("newfunc.php");
-if(isset($_POST['doctor_search_submit']))
-{
-	$contact=$_POST['doctor_contact'];
-  $query = "select * from doctb where email= '$contact'";
+error_reporting(0);
+if(isset($_POST['doctor_search_submit'])){
+	$email=$_POST['doctor_email'];
+  $query = "select * from doctb where email= '$email'";
   $result = mysqli_query($con,$query);
   $row=mysqli_fetch_array($result);
   if($row['username']=="" & $row['password']=="" & $row['email']=="" & $row['docFees']==""){
