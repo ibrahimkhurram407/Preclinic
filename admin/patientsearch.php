@@ -8,10 +8,11 @@
 <body>
 <?php
 include("newfunc.php");
+error_reporting(0);
 if(isset($_POST['patient_search_submit']))
 {
-	$contact=$_POST['patient_contact'];
-	$query = "select * from patreg where contact= '$contact'";
+	$email=$_POST['patient_email'];
+	$query = "select * from patreg where email= '$email'";
   $result = mysqli_query($con,$query);
   $row=mysqli_fetch_array($result);
   if($row['lname']=="" & $row['email']=="" & $row['contact']=="" & $row['password']==""){

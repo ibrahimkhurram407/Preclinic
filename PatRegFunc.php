@@ -1,42 +1,50 @@
 <?php
 session_start();
 include('./admin/include/config.php');
+
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit();
 }
-if(isset($_POST['patsub1'])){
-  echo"something";
-	$fname=$_POST['fname'];
-  $lname=$_POST['lname'];
-  $gender=$_POST['gender'];
-  $email=$_POST['email'];
-  $contact=$_POST['contact'];
-	$password=$_POST['password'];
-  $cpassword=$_POST['cpassword'];
-  if($password==$cpassword){
-  	$query="insert into patreg(fname,lname,gender,email,contact,password,cpassword) values ('$fname','$lname','$gender','$email','$contact','$password','$cpassword');";
-    $result=mysqli_query($con,$query);
-    if($result){
-        $_SESSION['username'] = $_POST['fname']." ".$_POST['lname'];
-        $_SESSION['fname'] = $_POST['fname'];
-        $_SESSION['lname'] = $_POST['lname'];
-        $_SESSION['gender'] = $_POST['gender'];
-        $_SESSION['contact'] = $_POST['contact'];
-        $_SESSION['email'] = $_POST['email'];
-        header("Location:login.php");
-    } 
 
-    $query1 = "select * from patreg;";
-    $result1 = mysqli_query($con,$query1);
-    if($result1){
-      $_SESSION['pid'] = $row['pid'];
+if (isset($_POST['patsub1'])) {
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+    $address = $_POST['address'];
+
+    if ($password == $cpassword) {
+        $query = "INSERT INTO patreg(fname,lname,gender,email,contact,address,password,cpassword) VALUES ('$fname', '$lname', '$gender', '$email', '$contact', '$address', '$password', '$cpassword');";
+        $result = mysqli_query($con, $query);
+
+        if ($result) {
+            $_SESSION['username'] = $fname . " " . $lname;
+            $_SESSION['fname'] = $fname;
+            $_SESSION['lname'] = $lname;
+            $_SESSION['gender'] = $gender;
+            $_SESSION['contact'] = $contact;
+            $_SESSION['email'] = $email;
+
+            $query1 = "SELECT * FROM patreg;";
+            $result1 = mysqli_query($con, $query1);
+
+            // Check if the query execution was successful and if there are any rows
+            if ($result1 && mysqli_num_rows($result1) > 0) {
+                $row = mysqli_fetch_assoc($result1);
+                $_SESSION['pid'] = $row['pid'];
+            }
+
+            header("Location: login.php");
+        } else {
+            echo "Error: " . mysqli_error($con);
+        }
+    } else {
+        header("Location: error1.php");
     }
-
-  }
-  else{
-    header("Location:error1.php");
-  }
 }
 if(isset($_POST['update_data']))
 {
