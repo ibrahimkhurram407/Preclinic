@@ -22,30 +22,35 @@ if(isset($_POST['patient_search_submit']))
   else {
     echo "<div class='container-fluid' style='margin-top:50px;'>
 	<div class='card'>
-	<div class='card-body' style='background-color:#342ac1;color:#ffffff;'>
+	<div class='card-body' style='background-color:#009efb;color:#ffffff;'>
 <table class='table table-hover'>
   <thead>
     <tr>
+      <th scope='col'>Id</th>
       <th scope='col'>First Name</th>
       <th scope='col'>Last Name</th>
       <th scope='col'>Email</th>
       <th scope='col'>Contact</th>
-      <th scope='col'>Password</th>
+      <th scope='col'>Address</th>
+      <th scope='col'>Password</th>     
     </tr>
   </thead>
   <tbody>";
 
-	
+        $pid = $row['pid'];
 		    $fname = $row['fname'];
         $lname = $row['lname'];
         $email = $row['email'];
         $contact = $row['contact'];
+        $address = $row['address'];
         $password = $row['password'];
         echo "<tr>
+          <td>$pid</td>
           <td>$fname</td>
           <td>$lname</td>
           <td>$email</td>
           <td>$contact</td>
+          <td>$address</td>
           <td>$password</td>
         </tr>";
     

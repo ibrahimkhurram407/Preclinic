@@ -70,7 +70,7 @@ if(isset($_POST['prescribe']) && isset($_POST['pid']) && isset($_POST['ID']) && 
 
   <style >
     .bg-primary {
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: #009efb;
 }
 .list-group-item.active {
     z-index: 2;
@@ -83,7 +83,7 @@ if(isset($_POST['prescribe']) && isset($_POST['pid']) && isset($_POST['ID']) && 
 }
 
 .btn-primary{
-  background-color: #3c50c1;
+  background-color: #009efb;
   border-color: #3c50c1;
 }
   </style>
@@ -119,18 +119,18 @@ if(isset($_POST['prescribe']) && isset($_POST['pid']) && isset($_POST['ID']) && 
                   <div class="col-md-4"><label>Disease:</label></div>
                   <div class="col-md-8">
                   <!-- <input type="text" class="form-control" name="disease" required> -->
-                  <textarea id="disease" cols="86" rows ="5" name="disease" required></textarea>
+                  <textarea id="disease" cols="80" rows ="3" name="disease" required></textarea>
                   </div><br><br><br>
                   
                   <div class="col-md-4"><label>Allergies:</label></div>
                   <div class="col-md-8">
                   <!-- <input type="text"  class="form-control" name="allergy" required> -->
-                  <textarea id="allergy" cols="86" rows ="5" name="allergy" required></textarea>
+                  <textarea id="allergy" cols="80" rows ="3" name="allergy" required></textarea>
                   </div><br><br><br>
                   <div class="col-md-4"><label>Prescription:</label></div>
                   <div class="col-md-8">
                   <!-- <input type="text" class="form-control"  name="prescription"  required> -->
-                  <textarea id="prescription" cols="86" rows ="10" name="prescription" required></textarea>
+                  <textarea id="prescription" cols="80" rows ="6" name="prescription" required></textarea>
                   </div><br><br><br>
                   <input type="hidden" name="fname" value="<?php echo $fname ?>" />
                   <input type="hidden" name="lname" value="<?php echo $lname ?>" />

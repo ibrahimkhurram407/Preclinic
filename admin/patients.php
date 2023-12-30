@@ -115,6 +115,7 @@ if(isset($_POST['docsub1']))
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Gender</th>
+                                        <th>Email</th>
                                         <th>Contact</th>
                                         <th>Address</th>
                                         <th>Email</th>
@@ -135,6 +136,7 @@ if(isset($_POST['docsub1']))
 									$gender = $row['gender'];
 									$email = $row['email'];
 									$contact = $row['contact'];
+									$address = $row['address'];
 									$password = $row['password'];
                                     $address = $row['address'];
                                     $editAccountDetailsURL = 'account-details.php?table=patreg&id=' . $pid . "&page=patients.php";
@@ -143,6 +145,7 @@ if(isset($_POST['docsub1']))
                                         <td>$pid</td>
                                         <td><img width='28 height='28' src='assets/img/user.jpg' class='rounded-circle m-r-5' alt=''>$fname $lname</td>
                                         <td>$gender</td>
+                                        <td>$email</td>
                                         <td>$contact</td>
                                         <td>$address</td>
                                         <td>$email</td>

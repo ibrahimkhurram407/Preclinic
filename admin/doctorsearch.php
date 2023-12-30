@@ -22,27 +22,37 @@ if(isset($_POST['doctor_search_submit'])){
   else {
     echo "<div class='container-fluid' style='margin-top:50px;'>
 	<div class ='card'>
-	<div class='card-body' style='background-color:#342ac1;color:#ffffff;'>
+	<div class='card-body' style='background-color:#009efb;color:#ffffff;'>
 <table class='table table-hover'>
   <thead>
     <tr>
-      <th scope='col'>Username</th>
-      <th scope='col'>Password</th>
+      <th scope='col'>Id</th>
+      <th scope='col'>Name</th>
+      <th scope='col'>Specialization</th>
       <th scope='col'>Email</th>
-      <th scope='col'>Consultancy Fees</th>
+      <th scope='col'>City</th>
+      <th scope='col'>Password</th>
+      <th scope='col'>Doctor Fees</th>
     </tr>
   </thead>
   <tbody>";
 
 	// while ($row=mysqli_fetch_array($result)){
-		    $username = $row['username'];
-        $password = $row['password'];
+        $id = $row['id'];
+        $username = $row['username'];
+        $spec = $row['spec'];
         $email = $row['email'];
+        $city = $row['city'];
+        $password = $row['password'];
         $docFees = $row['docFees'];
+
         echo "<tr>
+          <td>$id</td>
           <td>$username</td>
-          <td>$password</td>
+          <td>$spec </td>
           <td>$email</td>
+          <td>$city</td>
+          <td>$password</td>
           <td>$docFees</td>
         </tr>";
 	// }
