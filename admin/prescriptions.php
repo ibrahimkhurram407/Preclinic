@@ -98,18 +98,6 @@ if(isset($_POST['docsub1']))
                 <div class="table-responsive">
                     <table class="table table-border table-striped custom-table datatable mb-0">
                         <div class="tab-pane fade" id="list-pat" role="tabpanel" aria-labelledby="list-pat-list">
-
-                            <div class="col-md-8">
-                                <form class="form-group" action="patientsearch.php" method="post">
-                                    <div class="row">
-                                        <div class="col-md-10"><input type="text" name="patient_contact"
-                                                placeholder="Enter Contact" class="form-control"></div>
-                                        <div class="col-md-2"><input type="submit" name="patient_search_submit"
-                                                class="btn btn-primary" value="Search"></div>
-                                    </div>
-                                </form>
-                            </div>
-
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
@@ -125,7 +113,7 @@ if(isset($_POST['docsub1']))
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php 
+                                    <?php 
                                     include('include/config.php');
                                     global $con;
                                     $query = "select * from prestb";
@@ -156,7 +144,7 @@ if(isset($_POST['docsub1']))
                                     }
 
                                 ?>
-                                    
+
                                 </tbody>
                             </table>
                             <br>

@@ -38,8 +38,7 @@ CREATE TABLE `admintb` (
 --
 
 INSERT INTO `admintb` (`username`, `password`) VALUES
-('admin', 'admin123'),
-('Zain1234', 'zain890');
+('admin', 'admin');
 -- --------------------------------------------------------
 
 --
@@ -66,36 +65,36 @@ CREATE TABLE `appointmenttb` (
 --
 
 INSERT INTO `appointmenttb` (`pid`, `ID`, `fname`, `lname`, `gender`, `email`, `contact`, `doctor`, `docFees`, `appdate`, `userStatus`, `doctorStatus`) VALUES
-(1, 1, 'Abdul', 'Rehman', 'Male', 'abdul.rehman@gmail.com', '0301123456', 'Ali Ahmed', 2000, '2023-12-15', 0, 1),
-(1, 2, 'Abdul', 'Rehman', 'Male', 'abdul.rehman@gmail.com', '0301123456', 'Ali Ahmed', 2000, '2023-12-20', 1, 0),
-(1, 3, 'Abdul', 'Rehman', 'Male', 'abdul.rehman@gmail.com', '0301123456', 'Ali Ahmed', 2000, '2023-12-25', 1, 1),
-(2, 4, 'Saima', 'Ali', 'Female', 'saima.ali@gmail.com', '0312123456', 'Usman Khan', 2500, '2023-12-18', 0, 1),
-(2, 5, 'Saima', 'Ali', 'Female', 'saima.ali@gmail.com', '0312123456', 'Usman Khan', 2500, '2023-12-23', 1, 0),
-(2, 6, 'Saima', 'Ali', 'Female', 'saima.ali@gmail.com', '0312123456', 'Usman Khan', 2500, '2023-12-28', 1, 1),
-(3, 7, 'Rizwan', 'Khan', 'Male', 'rizwan.khan@gmail.com', '0323123456', 'Sara Khan', 1800, '2023-12-17', 0, 1),
-(3, 8, 'Rizwan', 'Khan', 'Male', 'rizwan.khan@gmail.com', '0323123456', 'Sara Khan', 1800, '2023-12-22', 1, 0),
-(3, 9, 'Rizwan', 'Khan', 'Male', 'rizwan.khan@gmail.com', '0323123456', 'Sara Khan', 1800, '2023-12-27', 1, 1),
-(4, 10, 'Saba', 'Ahmed', 'Female', 'saba.ahmed@gmail.com', '0334123456', 'Farah Ali', 2200, '2023-12-14', 0, 1),
-(4, 11, 'Saba', 'Ahmed', 'Female', 'saba.ahmed@gmail.com', '0334123456', 'Farah Ali', 2200, '2023-12-19', 1, 0),
-(4, 12, 'Saba', 'Ahmed', 'Female', 'saba.ahmed@gmail.com', '0334123456', 'Farah Ali', 2200, '2023-12-24', 1, 1),
-(5, 13, 'Imran', 'Bashir', 'Male', 'imran.bashir@gmail.com', '0345123456', 'Ahmed Malik', 2600, '2023-12-16', 0, 1),
-(5, 14, 'Imran', 'Bashir', 'Male', 'imran.bashir@gmail.com', '0345123456', 'Ahmed Malik', 2600, '2023-12-21', 1, 0),
-(5, 15, 'Imran', 'Bashir', 'Male', 'imran.bashir@gmail.com', '0345123456', 'Ahmed Malik', 2600, '2023-12-26', 1, 1),
-(6, 16, 'Nida', 'Malik', 'Female', 'nida.malik@gmail.com', '0356123456', 'Ayesha Khan', 2400, '2023-12-14', 0, 1),
-(6, 17, 'Nida', 'Malik', 'Female', 'nida.malik@gmail.com', '0356123456', 'Ayesha Khan', 2400, '2023-12-19', 1, 0),
-(6, 18, 'Nida', 'Malik', 'Female', 'nida.malik@gmail.com', '0356123456', 'Ayesha Khan', 2400, '2023-12-24', 1, 1),
-(7, 19, 'Ali', 'Fatima', 'Male', 'ali.fatima@gmail.com', '0367123456', 'Tariq Ahmed', 2100, '2023-12-16', 0, 1),
-(7, 20, 'Ali', 'Fatima', 'Male', 'ali.fatima@gmail.com', '0367123456', 'Tariq Ahmed', 2100, '2023-12-21', 1, 0),
-(7, 21, 'Ali', 'Fatima', 'Male', 'ali.fatima@gmail.com', '0367123456', 'Tariq Ahmed', 2100, '2023-12-26', 1, 1),
-(8, 22, 'Ayesha', 'Mansoor', 'Female', 'ayesha.mansoor@gmail.com', '0378123456', 'Nadia Malik', 2300, '2023-12-14', 0, 1),
-(8, 23, 'Ayesha', 'Mansoor', 'Female', 'ayesha.mansoor@gmail.com', '0378123456', 'Nadia Malik', 2300, '2023-12-19', 1, 0),
-(8, 24, 'Ayesha', 'Mansoor', 'Female', 'ayesha.mansoor@gmail.com', '0378123456', 'Nadia Malik', 2300, '2023-12-24', 1, 1),
-(9, 25, 'Kamran', 'Yousaf', 'Male', 'kamran.yousaf@gmail.com', '0389123456', 'Bilal Khan', 2800, '2023-12-16', 0, 1),
-(9, 26, 'Kamran', 'Yousaf', 'Male', 'kamran.yousaf@gmail.com', '0389123456', 'Bilal Khan', 2800, '2023-12-21', 1, 0),
-(9, 27, 'Kamran', 'Yousaf', 'Male', 'kamran.yousaf@gmail.com', '0389123456', 'Bilal Khan', 2800, '2023-12-26', 1, 1),
-(10, 28, 'Fariha', 'Saeed', 'Female', 'fariha.saeed@gmail.com', '0399123456', 'Rabia Ahmed', 1900, '2023-12-14', 0, 1),
-(10, 29, 'Fariha', 'Saeed', 'Female', 'fariha.saeed@gmail.com', '0399123456', 'Rabia Ahmed', 1900, '2023-12-19', 1, 0),
-(10, 30, 'Fariha', 'Saeed', 'Female', 'fariha.saeed@gmail.com', '0399123456', 'Rabia Ahmed', 1900, '2023-12-24', 1, 1);
+(1, 1, 'Abdul', 'Rehman', 'Male', 'abdul.rehman@gmail.com', '0301123456', 'aliahmed', 2000, '2023-12-15', 0, 1),
+(1, 2, 'Abdul', 'Rehman', 'Male', 'abdul.rehman@gmail.com', '0301123456', 'aliahmed', 2000, '2023-12-20', 1, 0),
+(1, 3, 'Abdul', 'Rehman', 'Male', 'abdul.rehman@gmail.com', '0301123456', 'aliahmed', 2000, '2023-12-25', 1, 1),
+(2, 4, 'Saima', 'Ali', 'Female', 'saima.ali@gmail.com', '0312123456', 'usmankhan', 2500, '2023-12-18', 0, 1),
+(2, 5, 'Saima', 'Ali', 'Female', 'saima.ali@gmail.com', '0312123456', 'usmankhan', 2500, '2023-12-23', 1, 0),
+(2, 6, 'Saima', 'Ali', 'Female', 'saima.ali@gmail.com', '0312123456', 'usmankhan', 2500, '2023-12-28', 1, 1),
+(3, 7, 'Rizwan', 'Khan', 'Male', 'rizwan.khan@gmail.com', '0323123456', 'sarakhan', 1800, '2023-12-17', 0, 1),
+(3, 8, 'Rizwan', 'Khan', 'Male', 'rizwan.khan@gmail.com', '0323123456', 'sarakhan', 1800, '2023-12-22', 1, 0),
+(3, 9, 'Rizwan', 'Khan', 'Male', 'rizwan.khan@gmail.com', '0323123456', 'sarakhan', 1800, '2023-12-27', 1, 1),
+(4, 10, 'Saba', 'Ahmed', 'Female', 'saba.ahmed@gmail.com', '0334123456', 'farahali', 2200, '2023-12-14', 0, 1),
+(4, 11, 'Saba', 'Ahmed', 'Female', 'saba.ahmed@gmail.com', '0334123456', 'farahali', 2200, '2023-12-19', 1, 0),
+(4, 12, 'Saba', 'Ahmed', 'Female', 'saba.ahmed@gmail.com', '0334123456', 'farahali', 2200, '2023-12-24', 1, 1),
+(5, 13, 'Imran', 'Bashir', 'Male', 'imran.bashir@gmail.com', '0345123456', 'ahmedmalik', 2600, '2023-12-16', 0, 1),
+(5, 14, 'Imran', 'Bashir', 'Male', 'imran.bashir@gmail.com', '0345123456', 'ahmedmalik', 2600, '2023-12-21', 1, 0),
+(5, 15, 'Imran', 'Bashir', 'Male', 'imran.bashir@gmail.com', '0345123456', 'ahmedmalik', 2600, '2023-12-26', 1, 1),
+(6, 16, 'Nida', 'Malik', 'Female', 'nida.malik@gmail.com', '0356123456', 'ayeshakhan', 2400, '2023-12-14', 0, 1),
+(6, 17, 'Nida', 'Malik', 'Female', 'nida.malik@gmail.com', '0356123456', 'ayeshakhan', 2400, '2023-12-19', 1, 0),
+(6, 18, 'Nida', 'Malik', 'Female', 'nida.malik@gmail.com', '0356123456', 'ayeshakhan', 2400, '2023-12-24', 1, 1),
+(7, 19, 'Ali', 'Fatima', 'Male', 'ali.fatima@gmail.com', '0367123456', 'tariqahmed', 2100, '2023-12-16', 0, 1),
+(7, 20, 'Ali', 'Fatima', 'Male', 'ali.fatima@gmail.com', '0367123456', 'tariqahmed', 2100, '2023-12-21', 1, 0),
+(7, 21, 'Ali', 'Fatima', 'Male', 'ali.fatima@gmail.com', '0367123456', 'tariqahmed', 2100, '2023-12-26', 1, 1),
+(8, 22, 'Ayesha', 'Mansoor', 'Female', 'ayesha.mansoor@gmail.com', '0378123456', 'nadiamalik', 2300, '2023-12-14', 0, 1),
+(8, 23, 'Ayesha', 'Mansoor', 'Female', 'ayesha.mansoor@gmail.com', '0378123456', 'nadiamalik', 2300, '2023-12-19', 1, 0),
+(8, 24, 'Ayesha', 'Mansoor', 'Female', 'ayesha.mansoor@gmail.com', '0378123456', 'nadiamalik', 2300, '2023-12-24', 1, 1),
+(9, 25, 'Kamran', 'Yousaf', 'Male', 'kamran.yousaf@gmail.com', '0389123456', 'bilalkhan', 2800, '2023-12-16', 0, 1),
+(9, 26, 'Kamran', 'Yousaf', 'Male', 'kamran.yousaf@gmail.com', '0389123456', 'bilalkhan', 2800, '2023-12-21', 1, 0),
+(9, 27, 'Kamran', 'Yousaf', 'Male', 'kamran.yousaf@gmail.com', '0389123456', 'bilalkhan', 2800, '2023-12-26', 1, 1),
+(10, 28, 'Fariha', 'Saeed', 'Female', 'fariha.saeed@gmail.com', '0399123456', 'rabiaahmed', 1900, '2023-12-14', 0, 1),
+(10, 29, 'Fariha', 'Saeed', 'Female', 'fariha.saeed@gmail.com', '0399123456', 'rabiaahmed', 1900, '2023-12-19', 1, 0),
+(10, 30, 'Fariha', 'Saeed', 'Female', 'fariha.saeed@gmail.com', '0399123456', 'rabiaahmed', 1900, '2023-12-24', 1, 1);
 
 
 
@@ -144,16 +143,16 @@ CREATE TABLE `doctb` (
 -- Dumping data for table `doctb`
 --
 INSERT INTO `doctb` (`username`, `password`, `email`, `city`, `spec`, `docFees`) VALUES
-('Ali Ahmed', 'Ali123', 'ali@gmail.com', 'Lahore', 'Cardiologist', 2000),
-('Usman Khan', 'Usman123', 'usman@gmail.com', 'Karachi', 'Orthopedic Surgeon', 2500),
-('Sara Khan', 'Sara123', 'sara@gmail.com', 'Islamabad', 'Dermatologist', 1800),
-('Farah Ali', 'Farah123', 'farah@gmail.com', 'Gujranwala', 'Pediatrician', 2200),
-('Ahmed Malik', 'Ahmed123', 'ahmed@gmail.com', 'Karachi', 'Neurologist', 2600),
-('Ayesha Khan', 'Ayesha123', 'ayesha@gmail.com', 'Multan', 'Gynecologist', 2400),
-('Tariq Ahmed', 'Tariq123', 'tariq@gmail.com', 'Lahore', 'Cardiologist', 2100),
-('Nadia Malik', 'Nadia123', 'nadia@gmail.com', 'Karachi', 'ENT Specialist', 2300),
-('Bilal Khan', 'Bilal123', 'bilal@gmail.com', 'Peshawar', 'Psychiatrist', 2800),
-('Rabia Ahmed', 'Rabia123', 'rabia@gmail.com', 'Quetta', 'Dentist', 1900);
+('aliahmed', 'Ali123', 'ali@gmail.com', 'Lahore', 'Cardiologist', 2000),
+('usmankhan', 'Usman123', 'usman@gmail.com', 'Karachi', 'Orthopedic Surgeon', 2500),
+('sarakhan', 'Sara123', 'sara@gmail.com', 'Islamabad', 'Dermatologist', 1800),
+('farahali', 'Farah123', 'farah@gmail.com', 'Gujranwala', 'Pediatrician', 2200),
+('ahmedmalik', 'Ahmed123', 'ahmed@gmail.com', 'Karachi', 'Neurologist', 2600),
+('ayeshakhan', 'Ayesha123', 'ayesha@gmail.com', 'Multan', 'Gynecologist', 2400),
+('tariqahmed', 'Tariq123', 'tariq@gmail.com', 'Lahore', 'Cardiologist', 2100),
+('nadiamalik', 'Nadia123', 'nadia@gmail.com', 'Karachi', 'ENT Specialist', 2300),
+('bilalkhan', 'Bilal123', 'bilal@gmail.com', 'Peshawar', 'Psychiatrist', 2800),
+('rabiaahmed', 'Rabia123', 'rabia@gmail.com', 'Quetta', 'Dentist', 1900);
 
 -- --------------------------------------------------------
 
@@ -243,16 +242,16 @@ CREATE TABLE `prestb` (
 --
 
 INSERT INTO `prestb` (`doctor`, `pid`, `ID`, `fname`, `lname`, `appdate`, `disease`, `allergy`, `prescription`) VALUES
-('Ali Ahmed', 1, 1, 'Abdul', 'Rehman', '2023-12-27', 'Fever', 'None', 'Take Ibuprofen and get plenty of rest'),
-('Usman Khan', 2, 2, 'Saima', 'Ali', '2023-12-27', 'Headache', 'Aspirin allergy', 'Avoid aspirin, take Acetaminophen for headache'),
-('Sara Khan', 3, 3, 'Rizwan', 'Khan', '2023-12-27', 'Stomachache', 'None', 'Take antacids and avoid spicy food'),
-('Farah Ali', 4, 4, 'Saba', 'Ahmed', '2023-12-27', 'Sprained ankle', 'None', 'Rest, ice, compression, and elevation (RICE)'),
-('Ahmed Malik', 5, 5, 'Imran', 'Bashir', '2023-12-27', 'Migraine', 'None', 'Prescribe Sumatriptan for migraine relief'),
-('Ayesha Khan', 6, 6, 'Nida', 'Malik', '2023-12-27', 'Allergies', 'Pollen', 'Prescribe Loratadine for allergy relief'),
-('Tariq Ahmed', 7, 7, 'Ali', 'Fatima', '2023-12-27', 'High Blood Pressure', 'None', 'Prescribe Lisinopril for blood pressure'),
-('Nadia Malik', 8, 8, 'Ayesha', 'Mansoor', '2023-12-27', 'Gastritis', 'None', 'Prescribe Omeprazole for gastritis relief'),
-('Bilal Khan', 9, 9, 'Kamran', 'Yousaf', '2023-12-27', 'Kidney Stones', 'None', 'Recommend increased water intake and pain management'),
-('Rabia Ahmed', 10, 10, 'Fariha', 'Saeed', '2023-12-27', 'Diabetes', 'None', 'Prescribe Metformin for diabetes management');
+('aliahmed', 1, 1, 'Abdul', 'Rehman', '2023-12-27', 'Fever', 'None', 'Take Ibuprofen and get plenty of rest'),
+('usmankhan', 2, 2, 'Saima', 'Ali', '2023-12-27', 'Headache', 'Aspirin allergy', 'Avoid aspirin, take Acetaminophen for headache'),
+('sarakhan', 3, 3, 'Rizwan', 'Khan', '2023-12-27', 'Stomachache', 'None', 'Take antacids and avoid spicy food'),
+('farahali', 4, 4, 'Saba', 'Ahmed', '2023-12-27', 'Sprained ankle', 'None', 'Rest, ice, compression, and elevation (RICE)'),
+('ahmedmalik', 5, 5, 'Imran', 'Bashir', '2023-12-27', 'Migraine', 'None', 'Prescribe Sumatriptan for migraine relief'),
+('ayeshakhan', 6, 6, 'Nida', 'Malik', '2023-12-27', 'Allergies', 'Pollen', 'Prescribe Loratadine for allergy relief'),
+('tariqahmed', 7, 7, 'Ali', 'Fatima', '2023-12-27', 'High Blood Pressure', 'None', 'Prescribe Lisinopril for blood pressure'),
+('nadiamalik', 8, 8, 'Ayesha', 'Mansoor', '2023-12-27', 'Gastritis', 'None', 'Prescribe Omeprazole for gastritis relief'),
+('bilalkhan', 9, 9, 'Kamran', 'Yousaf', '2023-12-27', 'Kidney Stones', 'None', 'Recommend increased water intake and pain management'),
+('rabiaahmed', 10, 10, 'Fariha', 'Saeed', '2023-12-27', 'Diabetes', 'None', 'Prescribe Metformin for diabetes management');
 
 
 --
