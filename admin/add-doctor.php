@@ -5,14 +5,13 @@
 <?php
 include('newfunc.php');
 include('./include/config.php');
-session_start();
-$_SESSION['dname'] = "zain";#Hard coded remove when done
-if (!isset($_SESSION['dname'])) {
+
+if (!isset($_SESSION['username'])) {
     die("You are not authorised");
 }
-$doctor = $_SESSION['dname'];
-if (isset($_SESSION['dID'])) {
-  $doctor_id = $_SESSION['dID'];
+$doctor = $_SESSION['username'];
+if (isset($_SESSION['id'])) {
+  $doctor_id = $_SESSION['id'];
 }else {
   $id_query = mysqli_query($con, "SELECT id FROM doctb WHERE username = '" . $doctor . "';");
   if ($id_query) {
@@ -82,6 +81,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['docsub'])) {
                                             <option value="Cardiologist" name="spec">Cardiologist</option>
                                             <option value="Neurologist" name="spec">Neurologist</option>
                                             <option value="Pediatrician" name="spec">Pediatrician</option>
+                                            <option value="Dentist" name="spec">Dentist</option>
+                                            <option value="ENT Specialist" name="spec">ENT Specialist</option>
+                                            <option value="Psychiatrist" name="spec">Psychiatrist</option>
+                                            <option value="Gynecologist" name="spec">Gynecologist</option>
+                                            <option value="Dermatologist" name="spec">Dermatologist</option>
+                                            <option value="Orthopedic Surgeon" name="spec">Orthopedic Surgeon</option>
                                         </select>
                                     </div>
                                 </div>
@@ -128,12 +133,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['docsub'])) {
 										</div>
 									</div>
 								</div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Phone </label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
                             </div>
                             <div class="m-t-20 text-center">
                                 <input type="submit" name="docsub" value="Add Doctor" class="btn btn-primary">

@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $updateQuery = rtrim($updateQuery, ', ');
 
     if ($table == "patreg") {
-        $updateQuery .= " WHERE pid = '$pid'";
+        $updateQuery .= " WHERE pid = '$id'";
     }else {
         $updateQuery .= " WHERE id = '$id'";
     }

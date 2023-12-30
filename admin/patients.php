@@ -126,8 +126,9 @@ if(isset($_POST['docsub1']))
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Gender</th>
-                                        <th>Contact</th>
                                         <th>Email</th>
+                                        <th>Contact</th>
+                                        <th>Address</th>
                                         <th>Password</th>
                                         <th class="text-right">Action</th>
                                     </tr>
@@ -145,6 +146,7 @@ if(isset($_POST['docsub1']))
 									$gender = $row['gender'];
 									$email = $row['email'];
 									$contact = $row['contact'];
+									$address = $row['address'];
 									$password = $row['password'];
                                     $editAccountDetailsURL = 'account-details.php?table=patreg&id=' . $pid . "&page=patients.php";
                                     $deleteAccountDetailsURL = "delete.php?table=patreg&id=$pid&page=patients.php";
@@ -152,8 +154,9 @@ if(isset($_POST['docsub1']))
                                         <td>$pid</td>
                                         <td><img width='28 height='28' src='assets/img/user.jpg' class='rounded-circle m-r-5' alt=''>$fname $lname</td>
                                         <td>$gender</td>
-                                        <td>$contact</td>
                                         <td>$email</td>
+                                        <td>$contact</td>
+                                        <td>$address</td>
                                         <td>$password</td>
                                         <td class='text-right'>
                                             <div class='dropdown dropdown-action'>
