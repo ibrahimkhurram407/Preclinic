@@ -88,7 +88,7 @@ if (!(isset($_SESSION['pid'],$_SESSION['fname'] ,$_SESSION['lname'], $_SESSION['
                             <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/account-icon.png"
                                 alt="Profile" class="profile-img" id="profile-img">
                             <div class="dropdown" id="dropdown">
-                                <button class="dropbtn">Account</button>
+                                <button class="dropbtn"><?php echo $fname . " " . $lname;?></button>
                                 <div class="dropdown-content">
                                     <a href="<?php echo "account-details.php?table=patreg&id=$pid&page=index.php";?>">Account Details</a>
                                     <a href="logout.php">Logout</a>

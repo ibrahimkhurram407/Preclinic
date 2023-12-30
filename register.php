@@ -39,8 +39,18 @@
                                 onkeydown="return alphaOnly(event);" required />
                         </div>
                         <div class="form-group">
-                            <label>Email Address</label>
+                            <label>Email</label>
                             <input type="email" class="form-control" placeholder="Your Email *" name="email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" class="form-control" placeholder="Address *" id="address"
+                                name="address" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Contact</label>
+                            <input type="text" class="form-control" placeholder="Contact No. *" id="contact"
+                                name="contact" required />
                         </div>
                         <div class="form-group">
                             <label>Password</label>

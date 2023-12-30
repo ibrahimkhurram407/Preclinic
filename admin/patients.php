@@ -4,7 +4,7 @@
 ?>
 <?php 
 include('newfunc.php');
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['id'])) {
     header("location: ./login.php");
     die("You are not authorised");
 }
@@ -127,6 +127,7 @@ if(isset($_POST['docsub1']))
                                         <th>Name</th>
                                         <th>Gender</th>
                                         <th>Contact</th>
+                                        <th>Address</th>
                                         <th>Email</th>
                                         <th>Password</th>
                                         <th class="text-right">Action</th>
@@ -146,6 +147,7 @@ if(isset($_POST['docsub1']))
 									$email = $row['email'];
 									$contact = $row['contact'];
 									$password = $row['password'];
+                                    $address = $row['address'];
                                     $editAccountDetailsURL = 'account-details.php?table=patreg&id=' . $pid . "&page=patients.php";
                                     $deleteAccountDetailsURL = "delete.php?table=patreg&id=$pid&page=patients.php";
 									echo "<tr>
@@ -153,6 +155,7 @@ if(isset($_POST['docsub1']))
                                         <td><img width='28 height='28' src='assets/img/user.jpg' class='rounded-circle m-r-5' alt=''>$fname $lname</td>
                                         <td>$gender</td>
                                         <td>$contact</td>
+                                        <td>$address</td>
                                         <td>$email</td>
                                         <td>$password</td>
                                         <td class='text-right'>

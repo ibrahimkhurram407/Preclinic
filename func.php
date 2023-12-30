@@ -17,6 +17,7 @@ if(isset($_POST['patsub'])){
       $_SESSION['username'] = $row['fname']." ".$row['lname'];
       $_SESSION['fname'] = $row['fname'];
       $_SESSION['lname'] = $row['lname'];
+      $_SESSION['address'] = $row['address'];
       $_SESSION['gender'] = $row['gender'];
       $_SESSION['contact'] = $row['contact'];
       $_SESSION['email'] = $row['email'];

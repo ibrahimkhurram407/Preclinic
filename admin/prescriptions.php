@@ -4,7 +4,7 @@
 ?>
 <?php 
 include('newfunc.php');
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['id'])) {
     header("location: ./login.php");
     die("You are not authorised");
 }
