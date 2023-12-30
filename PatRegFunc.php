@@ -8,43 +8,66 @@ if (mysqli_connect_errno()) {
 }
 
 if (isset($_POST['patsub1'])) {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $gender = $_POST['gender'];
-    $email = $_POST['email'];
-    $contact = $_POST['contact'];
-    $password = $_POST['password'];
-    $cpassword = $_POST['cpassword'];
-    $address = $_POST['address'];
+  $fname = $_POST['fname'];
+  $lname = $_POST['lname'];
+  $gender = $_POST['gender'];
+  $email = $_POST['email'];
+  $contact = $_POST['contact'];
+  $password = $_POST['password'];
+  $cpassword = $_POST['cpassword'];
+  $address = $_POST['address'];
 
-    if ($password == $cpassword) {
-        $query = "INSERT INTO patreg(fname,lname,gender,email,contact,address,password,cpassword) VALUES ('$fname', '$lname', '$gender', '$email', '$contact', '$address', '$password', '$cpassword');";
-        $result = mysqli_query($con, $query);
+  // Check if the email already exists in the table
+  $checkEmailQuery = "SELECT * FROM patreg WHERE email = '$email'";
+  $checkEmailResult = mysqli_query($con, $checkEmailQuery);
 
-        if ($result) {
-            $_SESSION['username'] = $fname . " " . $lname;
-            $_SESSION['fname'] = $fname;
-            $_SESSION['lname'] = $lname;
-            $_SESSION['gender'] = $gender;
-            $_SESSION['contact'] = $contact;
-            $_SESSION['email'] = $email;
+  if ($checkEmailResult && mysqli_num_rows($checkEmailResult) > 0) {
+      // Email already exists, redirect to an error page
+      echo "
+      <a href='./register.php'>Register Again</a>
+      <script>
+          alert('Already Registered Email');
+          window.location.href = './register.php';
+      </script>
+      ";
+      exit();
+  }
 
-            $query1 = "SELECT * FROM patreg;";
-            $result1 = mysqli_query($con, $query1);
+  if ($password == $cpassword) {
+      // Email doesn't exist, proceed with the registration
+      $query = "INSERT INTO patreg(fname, lname, gender, email, contact, address, password, cpassword) VALUES ('$fname', '$lname', '$gender', '$email', '$contact', '$address', '$password', '$cpassword');";
+      $result = mysqli_query($con, $query);
 
-            // Check if the query execution was successful and if there are any rows
-            if ($result1 && mysqli_num_rows($result1) > 0) {
-                $row = mysqli_fetch_assoc($result1);
-                $_SESSION['pid'] = $row['pid'];
-            }
+      if ($result) {
+          $_SESSION['username'] = $fname . " " . $lname;
+          $_SESSION['fname'] = $fname;
+          $_SESSION['lname'] = $lname;
+          $_SESSION['gender'] = $gender;
+          $_SESSION['contact'] = $contact;
+          $_SESSION['email'] = $email;
 
-            header("Location: login.php");
-        } else {
-            echo "Error: " . mysqli_error($con);
-        }
-    } else {
-        header("Location: error1.php");
-    }
+          // Retrieve the newly inserted record to get the patient ID
+          $query1 = "SELECT * FROM patreg WHERE email = '$email'";
+          $result1 = mysqli_query($con, $query1);
+
+          if ($result1 && mysqli_num_rows($result1) > 0) {
+              $row = mysqli_fetch_assoc($result1);
+              $_SESSION['pid'] = $row['pid'];
+          }
+
+          header("Location: login.php");
+      } else {
+          echo "Error: " . mysqli_error($con);
+      }
+  } else {
+      echo "
+      <a href='./register.php'>Register Again</a>
+      <script>
+          alert('Password and Confirm password not same!');
+          window.location.href = './register.php';
+      </script>
+      ";
+  }
 }
 if(isset($_POST['update_data']))
 {
