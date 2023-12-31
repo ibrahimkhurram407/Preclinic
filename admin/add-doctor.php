@@ -6,7 +6,7 @@
 include('newfunc.php');
 include('./include/config.php');
 
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['id'])) {
     die("You are not authorised");
 }
 $doctor = $_SESSION['username'];

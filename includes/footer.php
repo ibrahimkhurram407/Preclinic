@@ -18,7 +18,7 @@
         <div class="col-lg-2 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#home">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
@@ -26,13 +26,13 @@
         </div>
 
         <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Our Services</h4>
+          <h4>Quick Links</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#appointment">Make Appointment</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#appointment-history">Appointment History</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#prescription-history">Prescription history</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#gallery">Gallery</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact Us</a></li>
           </ul>
         </div>
     </div>

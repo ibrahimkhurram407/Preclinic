@@ -65,7 +65,7 @@
                         <div class="form-group">
                             <div class="maxl">
                                 <label class="radio inline">
-                                    <input type="radio" name="gender" value="Male" checked>
+                                    <input type="radio" name="gender" value="Male" >
                                     <span> Male </span>
                                 </label>
                                 <label class="radio inline">
@@ -73,10 +73,6 @@
                                     <span>Female </span>
                                 </label>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Mobile Number</label>
-                            <input type="text" class="form-control">
                         </div>
                         <div class="form-group checkbox">
                             <label>
