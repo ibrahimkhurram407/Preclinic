@@ -3,7 +3,7 @@ include('./admin/include/config.php');
 include('func.php');  
 include('newfunc.php');
 
-if (!(isset($_SESSION['pid'],$_SESSION['fname'] ,$_SESSION['lname'], $_SESSION['email'], $_SESSION['fname'], $_SESSION['lname'], $_SESSION['contact']))){
+if (!(isset($_SESSION['pid'],$_SESSION['fname'] ,$_SESSION['lname'], $_SESSION['email'], $_SESSION['contact']))){
     header("location: ./login.php");
     die("You are not authorised");
 }

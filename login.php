@@ -1,3 +1,11 @@
+
+<?php
+session_start();
+if ((isset($_SESSION['pid'],$_SESSION['fname'] ,$_SESSION['lname'], $_SESSION['email'], $_SESSION['contact']))){
+    header("location: ./index.php");
+    die("You are already Logged in!");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

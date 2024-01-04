@@ -2,6 +2,13 @@
 <html lang="en">
 
 
+<?php
+if (isset($_SESSION['id'])){
+    header("location: ./index.php");
+    die("You are already Logged in!");
+}
+?>
+
 <!-- login23:11-->
 
 <head>

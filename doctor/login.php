@@ -1,3 +1,11 @@
+
+<?php
+session_start();
+if (isset($_SESSION['dID'], $_SESSION['dname'])){
+    header("location: ./index.php");
+    die("You are already Logged in!");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
