@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("7.tcp.eu.ngrok.io","kali-server","Kali User 407","master", "17482");
+$con=mysqli_connect("7.tcp.eu.ngrok.io","kali-server","Kali User 407","master", "13432");
 // Check connection
 if (mysqli_connect_errno())
 {
