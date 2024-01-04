@@ -9,7 +9,8 @@ if(isset($_POST['docsub1'])){
 	if(mysqli_num_rows($result)==1)
 	{
     while($row=mysqli_fetch_array($result,MYSQLI_ASSOC)){
-    
+          session_destroy();
+          session_start();
 		      $_SESSION['dname']=$row['username'];
           $_SESSION['dID']=$row['id'];
     }

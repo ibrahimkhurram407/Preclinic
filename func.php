@@ -13,6 +13,8 @@ if(isset($_POST['patsub'])){
 	if(mysqli_num_rows($result)==1)
 	{
 		while($row=mysqli_fetch_array($result,MYSQLI_ASSOC)){
+      session_destroy();
+      session_start();
       $_SESSION['pid'] = $row['pid'];
       $_SESSION['username'] = $row['fname']." ".$row['lname'];
       $_SESSION['fname'] = $row['fname'];

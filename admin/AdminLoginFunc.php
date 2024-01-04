@@ -15,6 +15,8 @@ if(isset($_POST['adsub'])){
 	{
 		$row = mysqli_fetch_assoc($result);
 		$admin_id = $row['id'];
+		session_destroy();
+		session_start();
 		$_SESSION['id'] = $admin_id;
 		$_SESSION['username']=$username;
 		header("Location:index.php");
