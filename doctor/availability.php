@@ -6,6 +6,8 @@ if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 // Check if the doctor_id parameter is set
+echo "<a href='./index.php'>Go Back</a><br>";
+
 if (isset($_SESSION['dID'])) {
     $doctorId = $_SESSION['dID'];
 
@@ -32,7 +34,7 @@ if (isset($_SESSION['dID'])) {
     echo "Selected Months: " . print_r($selectedMonths, true) . "<br>";
     echo "Available Dates: " . print_r($availableDates, true) . "<br>";
     // Delete entries with id equal to 1
-    $deleteQuery = "DELETE FROM availabilitytb WHERE id = " . $doctorId . ";";
+    $deleteQuery = "DELETE FROM availabilitytb WHERE doctor_id = " . $doctorId . ";";
     $deleteResult = mysqli_query($con, $deleteQuery);
 
     // Check for success or handle errors as needed
@@ -43,18 +45,36 @@ if (isset($_SESSION['dID'])) {
     }
     // Insert dates into the database
     foreach ($availableDates as $date) {
-        $insertQuery = "INSERT INTO availabilitytb (doctor_id, date) VALUES ('$doctorId', '$date')";
-        $insertResult = mysqli_query($con, $insertQuery);
+        // Check if the date already exists in the table
+        $checkQuery = "SELECT COUNT(*) as count FROM availabilitytb WHERE doctor_id = '$doctorId' AND date = '$date'";
+        $checkResult = mysqli_query($con, $checkQuery);
     
-        // Check for success or handle errors as needed
-        if (!$insertResult) {
-            echo "Error inserting date $date: " . mysqli_error($con) . "<br>";
+        if (!$checkResult) {
+            echo "Error checking date $date: " . mysqli_error($con) . "<br>";
         } else {
-            echo "Successfully inserted date $date<br>";
-            echo "<script>alert('Successfully inserted date $date<br>');";
+            $row = mysqli_fetch_assoc($checkResult);
+            $count = $row['count'];
+    
+            if ($count == 0) {
+                // Date doesn't exist, so proceed with insertion
+                $insertQuery = "INSERT INTO availabilitytb (doctor_id, date) VALUES ('$doctorId', '$date')";
+                $insertResult = mysqli_query($con, $insertQuery);
+    
+                if (!$insertResult) {
+                    echo "Error inserting date $date: " . mysqli_error($con) . "<br>";
+                } else {
+                    echo "Successfully inserted date $date<br>";
+                }
+            } else {
+                echo "Date $date already exists in the table<br>";
+            }
         }
     }
-    header("location:./add-schedule.php");
+    ob_end_flush();
+    header("location: index.php");
+    
+    
+
     
 }else{
     echo "no ID in session";

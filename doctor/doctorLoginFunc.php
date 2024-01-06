@@ -4,9 +4,9 @@ session_start();
 if(isset($_POST['docsub1'])){
 	$dname=$_POST['username3'];
 	$dpass=$_POST['password3'];
-	$query="select * from doctb where username='$dname' and password='$dpass';";
+	$query="select * from doctb where BINARY username='$dname' and password='$dpass';";
 	$result=mysqli_query($con,$query);
-	if(mysqli_num_rows($result)==1)
+	if(mysqli_num_rows($result)> 0)
 	{
     while($row=mysqli_fetch_array($result,MYSQLI_ASSOC)){
           session_destroy();

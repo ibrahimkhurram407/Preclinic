@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['docsub'])) {
 
     if ($result) {
         echo "<script>alert('Doctor added successfully!');</script>";
+        header("location: doctors.php");
     } else {
         echo "<script>alert('Error adding doctor: " . mysqli_error($con) . "');</script>";
         error_log('Error adding doctor: ' . mysqli_error($con)); // Log the error

@@ -3,7 +3,8 @@
 
 
 <?php
-if (isset($_SESSION['id'])){
+session_start();
+if (isset($_SESSION['username'])){
     header("location: ./index.php");
     die("You are already Logged in!");
 }

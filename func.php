@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
 if(isset($_POST['patsub'])){
 	$email=$_POST['email'];
 	$password=$_POST['password2'];
-	$query="select * from patreg where email='$email' and password='$password';";
+	$query="select * from patreg where BINARY email='$email' and BINARY password='$password';";
 	$result=mysqli_query($con,$query);
 	if(mysqli_num_rows($result)==1)
 	{

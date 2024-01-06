@@ -57,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<script>alert('Data updated successfully');</script>";
         echo "<a href='$page'>Go Back to Page</a>";
         echo "<script>window.location.href='$page'";
+        header("location: $page");
     } else {
         echo "<script>alert('Error updating data: " . mysqli_error($con) . "');</script>";
     }
@@ -151,7 +152,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit" id="submitButton" style="display: none;">Submit</button>
         </form>
     </div>
-
     <script>
         function enableEdit() {
             var inputs = document.getElementsByTagName('input');

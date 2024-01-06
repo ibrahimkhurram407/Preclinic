@@ -31,6 +31,7 @@ if(isset($_POST['prescribe']) && isset($_POST['pid']) && isset($_POST['ID']) && 
     if($query)
     {
       echo "<script>alert('Prescribed successfully!');</script>";
+      header("location: prescriptions.php");
     }
     else{
       echo "<script>alert('Unable to process your request. Try again!');</script>";
